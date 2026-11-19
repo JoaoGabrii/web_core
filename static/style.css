@@ -752,3 +752,20 @@ body:not(.visual-two) .brand-mark{background:#18352e;color:#d7f15e}
 /* Official selected WC monogram, faithfully traced from supplied image */
 body:not(.visual-two) .brand-mark,.visual-two .brand-mark,.footer .brand-mark,body:not(.visual-two) .footer .brand-mark{background:#173b2d;color:#d7f15e;border:0;border-radius:8px;box-shadow:none}
 .brand-mark .wc-monogram{width:92%;height:88%;max-width:none;max-height:none;display:block}
+
+
+/* Nomads: authentic live site preview, never a fabricated green mockup */
+.curated-projects .project-nomads{grid-column:1/-1}
+.project-nomads .nomads-preview,.visual-two .project-nomads .nomads-preview,body:not(.visual-two) .project-nomads .nomads-preview{position:relative;display:block!important;min-height:0!important;height:340px!important;padding:0!important;background:#100f0e!important;overflow:hidden;border:0;border-radius:0;color:#fff!important}
+.project-nomads .nomads-preview:after{display:none!important}
+.nomads-live-frame{position:relative;width:100%;height:100%;overflow:hidden;background:#13100f}
+.nomads-live-frame iframe{position:absolute;z-index:2;left:0;top:0;width:1600px;height:900px;max-width:none;border:0;transform:scale(.75);transform-origin:top left;pointer-events:none;opacity:1}
+.nomads-live-fallback{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:15px;padding:40px;background:linear-gradient(100deg,#101010,#2e1b13 85%);color:#fff}
+.nomads-live-fallback>span{font-size:11px;font-weight:800;letter-spacing:3px;color:#ff7038}
+.nomads-live-fallback strong{font-size:clamp(35px,5vw,70px);line-height:.95;font-weight:900;letter-spacing:-.05em}
+.nomads-live-fallback em{font-style:normal;color:#ff7038}
+.nomads-live-fallback small{font-size:11px;letter-spacing:2px;font-weight:800;color:#fff}
+.nomads-live-label{position:absolute;z-index:4;bottom:15px;right:18px;background:#fa6c30;color:#14100d;font-size:10px;font-weight:900;letter-spacing:1px;padding:9px 12px;border-radius:3px}
+.nomads-live-label b{margin-left:8px}
+@media(max-width:850px){.project-nomads .nomads-preview{height:260px!important}.nomads-live-frame iframe{transform:scale(.48)}}
+@media(max-width:520px){.project-nomads .nomads-preview{height:230px!important}.nomads-live-frame iframe{transform:scale(.32)}.nomads-live-fallback{padding:24px}}
