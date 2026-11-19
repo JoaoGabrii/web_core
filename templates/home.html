@@ -145,12 +145,12 @@
     };
     var plan=chosenPlan?(plans[chosenPlan]||{title:'Plano '+chosenPlan,desc:'Solução personalizada.',ask:'Quero saber mais sobre este plano.'}):null;
     var intro=plan&&hasMarketing?'Quero uma proposta integrada para desenvolver minha solução digital e atrair mais clientes.':hasMarketing?'Tenho interesse em contratar marketing digital mensal para atrair clientes e gerar oportunidades.':plan.title==='Plano Simples'?'Quero começar com uma presença digital profissional.':plan.title==='Plano Intermediário'?'Quero um site profissional que eu consiga atualizar com autonomia.':plan.title==='Plano Pro'?'Preciso de um site com recursos de cadastro e gestão de informações.':plan.title==='Plano Ultimate'?'Procuro uma plataforma profissional com gestão e controle de acessos.':'Quero uma solução completa de gestão comercial e relacionamento com clientes.';
-    var lines=['Olá, equipe WebCore! 👋','',intro,''];
-    if(plan){lines.push('🛒 *Solução escolhida*','• '+plan.title,'• '+plan.desc,'','🎯 *Meu objetivo*',plan.ask,'');}
-    if(hasMarketing){lines.push('📣 *Marketing digital mensal*','• Quero conversar sobre divulgação, campanhas e captação de leads.','• Gostaria de entender o acompanhamento mensal, os serviços incluídos e o investimento em anúncios.','');}
-    lines.push('👤 *Dados para contato*','• Nome: '+(name||'A preencher'),'• WhatsApp: '+(contact||'A preencher'));
+    var lines=['Olá, equipe WebCore! \u{1F44B}','',intro,''];
+    if(plan){lines.push('\u{1F6D2} *Solução escolhida*','• '+plan.title,'• '+plan.desc,'','\u{1F3AF} *Meu objetivo*',plan.ask,'');}
+    if(hasMarketing){lines.push('\u{1F4E3} *Marketing digital mensal*','• Quero conversar sobre divulgação, campanhas e captação de leads.','• Gostaria de entender o acompanhamento mensal, os serviços incluídos e o investimento em anúncios.','');}
+    lines.push('\u{1F464} *Dados para contato*','• Nome: '+(name||'A preencher'),'• WhatsApp: '+(contact||'A preencher'));
     if(email)lines.push('• E-mail: '+email);
-    if(details)lines.push('','💬 *Detalhes do meu projeto*',details);
+    if(details)lines.push('','\u{1F4AC} *Detalhes do meu projeto*',details);
     lines.push('','Podemos conversar sobre escopo, valores e próximos passos? Obrigado!');
     return lines.join('\n');
   }
@@ -190,7 +190,7 @@
     if(!chosenPlan&&!hasMarketing){document.getElementById('selection-error').hidden=false;document.getElementById('selection-error').scrollIntoView({behavior:'smooth',block:'center'});return;}
     if(!this.reportValidity())return;
     var summary=quoteText();
-    window.open('https://wa.me/5518997463778?text='+encodeURIComponent(summary),'_blank','noopener,noreferrer');
+    window.open('https://api.whatsapp.com/send?phone=5518997463778&text='+encodeURIComponent(summary),'_blank','noopener,noreferrer');
   });
   ['name','contact','email','message'].forEach(function(id){document.getElementById(id).addEventListener('input',refreshPreview);});
   document.getElementById('copy-quote').addEventListener('click',function(){var button=this; if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(quoteText()).then(function(){button.textContent='Mensagem copiada ✓';setTimeout(function(){button.textContent='Copiar mensagem do orçamento';},2200);}).catch(function(){button.textContent='Selecione o texto da prévia para copiar';});}else{button.textContent='Selecione o texto da prévia para copiar';}});
