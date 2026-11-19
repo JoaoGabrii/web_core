@@ -865,3 +865,10 @@ body:not(.visual-two) .brand-mark,.visual-two .brand-mark,.footer .brand-mark,bo
 .luar-concept-grid i.marked{background:#b9a4ed}
 .luar-concept-card small{display:block;margin-top:16px;font-size:10px;color:#9787ac}
 @media(max-width:520px){.nomads-concept strong{font-size:40px}.nomads-concept small{bottom:48px;font-size:9px}.luar-concept-card{width:94%;box-sizing:border-box}.luar-concept-grid{gap:4px}.luar-concept-grid i{height:19px}}
+
+/* Identidade WC original: monograma vetorial sem fundo e contraste por tema */
+body:not(.visual-two) .brand-mark, .visual-two .brand-mark, .footer .brand-mark, body:not(.visual-two) .footer .brand-mark {background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important;color:#147a56!important}
+.brand-mark{width:48px!important;height:40px!important;overflow:visible!important}
+.brand-mark .wc-monogram{width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;filter:drop-shadow(0 1px 0 #103d2420)}
+.visual-two .brand-mark{color:#0c7055!important}
+@media(prefers-color-scheme:dark){body:not(.visual-two) .brand-mark{color:#c7ff3f!important}}
