@@ -716,3 +716,34 @@ body:not(.visual-two) .footer p{color:#c7d7cb}
 body:not(.visual-two) .brand-mark{background:#18352e;color:#d7f15e}
 .visual-two .brand-mark{background:#d7f15e;color:#18352e}
 .footer .brand-mark,body:not(.visual-two) .footer .brand-mark{background:#d7f15e;color:#18352e}
+
+
+/* WebCore identity refinement: crisp architectural WC instead of rounded badge */
+.brand-mark,.visual-two .brand-mark,body:not(.visual-two) .brand-mark{border-radius:9px;box-shadow:none;padding:0}
+.brand-mark .wc-monogram{width:82%;height:82%;max-width:36px;max-height:30px}
+/* Nomads: high-contrast project browser mockup; visually consistent in both themes */
+.project-nomads .nomads-preview,.visual-two .project-nomads .nomads-preview,body:not(.visual-two) .project-nomads .nomads-preview{background:#161b17!important;color:#f6f3e8!important;min-height:310px;padding:24px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.project-nomads .nomads-preview:after{display:none}
+.nomads-browser{width:min(100%,850px);border:1px solid #49564b;background:#111613;border-radius:10px;box-shadow:0 20px 42px #0005;overflow:hidden;transition:transform .25s}
+.nomads-preview:hover .nomads-browser{transform:translateY(-4px)}
+.nomads-browser-bar{height:30px;background:#252d27;border-bottom:1px solid #414a42;display:flex;align-items:center;justify-content:space-between;padding:0 12px;font-size:10px;letter-spacing:.02em;color:#aab7aa}
+.nomads-browser-dots{display:flex;gap:4px}.nomads-browser-dots i{display:block;width:6px;height:6px;border-radius:50%;background:#778778}
+.nomads-browser-screen{padding:18px 28px 22px;background:radial-gradient(ellipse at 90% 50%,#394838 0%,transparent 53%),linear-gradient(120deg,#151d17,#232e23);min-height:225px;display:flex;flex-direction:column;justify-content:space-between}
+.nomads-site-top,.nomads-site-bottom{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.nomads-site-top b{font-size:17px;letter-spacing:-.07em;color:#fff}.nomads-site-top b span{color:#d7f15e}
+.nomads-site-top>span,.nomads-site-bottom{font-size:9px;letter-spacing:.18em;color:#c8d5c5;font-weight:700}
+.nomads-site-hero{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.nomads-site-tag{font-size:9px;letter-spacing:.17em;color:#d7f15e;font-weight:700}
+.nomads-site-hero strong{font-size:clamp(32px,4vw,56px);line-height:.9;font-weight:900;letter-spacing:-.065em;color:#fff}
+.nomads-site-hero strong em{color:#d7f15e;font-style:normal}
+.nomads-site-action{display:inline-block;background:#d7f15e;color:#17231a;padding:9px 13px;border-radius:3px;font-size:10px;font-weight:800;letter-spacing:.04em}
+.nomads-site-bottom{border-top:1px solid #ffffff28;padding-top:11px;justify-content:flex-start;gap:24px}
+/* Make the same streamlined conversion form equally usable in Visual 2 */
+.visual-two .quote-form{padding:22px;border-radius:10px}
+.visual-two .quote-form input,.visual-two .quote-form textarea{border-radius:7px}
+.visual-two .cart-panel{border-radius:10px;overflow:hidden}
+.visual-two .quote-preview{background:#eef5ea;border-color:#cbdcc7;color:#254334}
+.visual-two .quote-copy{border-radius:7px;color:#315b38}
+.visual-two .quote-form .form-submit{background:#19382e;color:#fff;border-radius:7px}
+.visual-two .quote-form .form-submit:hover{background:#315c48}
+@media(max-width:650px){.project-nomads .nomads-preview{min-height:255px;padding:12px}.nomads-browser-screen{min-height:200px;padding:16px}.nomads-site-hero strong{font-size:clamp(28px,7vw,42px)}.nomads-site-bottom{gap:14px}}
