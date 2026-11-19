@@ -1,0 +1,8 @@
+name = "web-core"
+compatibility_date = "2026-11-19"
+
+[build]
+command = "python3 build_static.py"
+
+[assets]
+directory = "./dist"
