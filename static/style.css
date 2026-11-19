@@ -667,3 +667,29 @@ body:not(.visual-two) .marketing-offer{padding:22px}
 .visual-two .quote-preview{background:#edf3e9}
 @media(max-width:850px){body:not(.visual-two) .hero-layout{min-height:0;padding:35px 0}body:not(.visual-two) .hero-art{min-height:330px}}
 @media(max-width:600px){body:not(.visual-two) .section{padding:42px 0}body:not(.visual-two) .hero h1{font-size:clamp(39px,10vw,51px)}body:not(.visual-two) .hero-art{min-height:290px}.cart-preview-head{display:block}.cart-preview-head span{display:block;margin-top:3px}.quote-preview{max-height:220px}}
+
+
+/* Visual 1 light-section contrast corrections; visual 2 unchanged */
+body:not(.visual-two) .process-section{background:#edf2e9;color:#19372e}
+body:not(.visual-two) .process-section h2,
+body:not(.visual-two) .process-section .steps h3{color:#19372e}
+body:not(.visual-two) .process-section h2 span{color:#547e43}
+body:not(.visual-two) .process-section .kicker,
+body:not(.visual-two) .process-section .steps>div>span{color:#507e42}
+body:not(.visual-two) .process-section .steps p{color:#566c5d}
+body:not(.visual-two) .process-section .steps>div{border-color:#b6c9b3}
+body:not(.visual-two) .quote-section h2,
+body:not(.visual-two) .portfolio-section h2,
+body:not(.visual-two) .plans-section h2{color:#1a352c}
+body:not(.visual-two) .quote-section .kicker,
+body:not(.visual-two) .portfolio-section .kicker,
+body:not(.visual-two) .plans-section .kicker{color:#527f43}
+body:not(.visual-two) .quote-intro>p,
+body:not(.visual-two) .section-heading>p{color:#546c5d}
+body:not(.visual-two) .quote-form .form-title h3{color:#18352e}
+body:not(.visual-two) .quote-form .form-title>span{color:#527f43}
+body:not(.visual-two) .plan-card:not(.plan-featured) h3,
+body:not(.visual-two) .project-content h3{color:#19372e}
+body:not(.visual-two) .plan-card:not(.plan-featured) p,
+body:not(.visual-two) .project-content p{color:#576b60}
+body:not(.visual-two) .footer p{color:#c7d7cb}
