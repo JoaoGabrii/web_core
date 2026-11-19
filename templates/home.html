@@ -152,7 +152,7 @@
     if(email)lines.push('• E-mail: '+email);
     if(details)lines.push('','💬 *Detalhes do meu projeto*',details);
     lines.push('','Podemos conversar sobre escopo, valores e próximos passos? Obrigado!');
-    return lines.join('\\n');
+    return lines.join('\n');
   }
   function refreshPreview(){
     var selected=Boolean(chosenPlan||hasMarketing);
