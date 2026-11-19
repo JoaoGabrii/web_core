@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %}WebCore | Sites, sistemas e crescimento digital{% endblock %}
 {% block content %}
+<div class="visual-switch" role="group" aria-label="Escolher aparência do site"><button type="button" data-visual="1" aria-pressed="true">Visual 1</button><button type="button" data-visual="2" aria-pressed="false">Visual 2</button></div>
 <header class="topbar">
   <div class="wrap topbar-inner">
     <a class="brand" href="/" aria-label="WebCore, início"><span class="brand-mark">W<span class="brand-dot">.</span></span><span>webcore<span class="brand-dot">.</span></span></a>
@@ -12,10 +13,10 @@
   </div>
 </header>
 <main>
-  <section class="hero">
+  <section class="hero"><div class="v2-hero-label wrap">WEBCORE / ESTÚDIO DE SOLUÇÕES DIGITAIS <span>DESIGN • TECNOLOGIA • CRESCIMENTO</span></div>
     <div class="hero-grid" aria-hidden="true"></div>
     <div class="wrap hero-layout">
-      <div class="hero-copy">
+      <div class="hero-copy"><div class="v2-intro">ESTRATÉGIA DIGITAL PARA NEGÓCIOS QUE QUEREM IR ALÉM</div>
         <div class="eyebrow"><span class="pulse-dot"></span> ESTÚDIO DIGITAL · DESIGN & TECNOLOGIA</div>
         <h1>Sites bonitos são só o <span>começo.</span></h1>
         <p>Transformamos a forma como sua empresa aparece, vende e funciona. Criamos sites marcantes, sistemas inteligentes e experiências digitais pensadas para o seu negócio crescer.</p>
@@ -38,9 +39,11 @@
         <div class="floating-panel floating-two"><span>↗</span><div><strong>Soluções que se conectam</strong><small>Do site à gestão completa</small></div></div>
       </div>
     </div>
+    <div class="v2-hero-band wrap"><div><small>01 / IDENTIDADE DIGITAL</small><strong>Presença que inspira confiança.</strong></div><div><small>02 / SISTEMAS</small><strong>Operações mais inteligentes.</strong></div><div><small>03 / PERFORMANCE</small><strong>Mais oportunidades de negócio.</strong></div></div>
     <div class="hero-bottom wrap"><span>WEBCORE — IDEIAS BEM EXECUTADAS</span><a href="#planos" aria-label="Rolar para os planos">↓ DESCUBRA MAIS</a></div>
   </section>
 
+  <section class="v2-about section"><div class="wrap v2-about-grid"><div><div class="kicker">SOBRE A WEBCORE</div><h2>Uma parceira digital.<br><span>Não só um fornecedor.</span></h2></div><div><p>Projetamos experiências digitais para apresentar sua marca, facilitar o contato com clientes e organizar processos. Do primeiro site ao sistema de gestão, cada solução é planejada para a realidade do seu negócio.</p><a href="#orcamento">Conte seu projeto para nós ↗</a></div></div></section>
   <section id="planos" class="section plans-section">
     <div class="wrap">
       <div class="section-heading"><div><div class="kicker">01 / SOLUÇÕES WEBCORE</div><h2>O plano certo para a <span>sua próxima fase.</span></h2></div><p>Cada negócio está em um momento. Conheça as modalidades e monte uma proposta sem compromissos, com serviços selecionados por você.</p></div>
@@ -86,6 +89,7 @@
     </div>
   </section>
 
+  <div class="v2-divider wrap"><span>TECNOLOGIA QUE ORGANIZA. MARKETING QUE APROXIMA.</span><span>WEBCORE® / DIGITAL STUDIO</span></div>
   <section id="marketing" class="section marketing-section"><div class="wrap marketing-grid">
     <div class="marketing-copy"><div class="kicker">02 / ADICIONAL OU SERVIÇO AVULSO</div><h2>Um bom site merece <span>ser encontrado.</span></h2><p>Marketing digital é um serviço <strong>separado e opcional, disponível para todos os planos</strong>. Você pode contratar sozinho ou combinar com qualquer plano WebCore para fortalecer sua presença e atrair novas oportunidades.</p><div class="marketing-points"><div><span>01</span><div><strong>Estratégia e planejamento</strong><p>Definição de objetivos, público e campanhas conforme a necessidade.</p></div></div><div><span>02</span><div><strong>Gestão de anúncios e captação</strong><p>Estruturação e acompanhamento de campanhas e geração de contatos.</p></div></div><div><span>03</span><div><strong>Acompanhamento mensal</strong><p>Análise de resultados, ajustes e relatórios no escopo contratado.</p></div></div></div></div>
     <div class="marketing-offer"><div class="marketing-offer-top"><span class="marketing-service">SERVIÇO RECORRENTE</span><span class="offer-symbol">↗</span></div><h3>Marketing digital</h3><p>Adicione visibilidade ao seu projeto com acompanhamento profissional.</p><div class="monthly-label"><strong>Mensalidade personalizada</strong><span>Sem valor fixo no site</span></div><div class="ad-info"><strong>Importante:</strong> a verba destinada aos anúncios é independente da mensalidade de gestão. O investimento é combinado e aprovado antes do início.</div><button type="button" class="btn btn-primary marketing-add" id="marketing-add" aria-pressed="false">Adicionar marketing ao orçamento <span>＋</span></button><small>Também pode ser contratado sem nenhum plano de site.</small></div>
@@ -113,10 +117,14 @@
     </form>
   </div></section>
 </main>
-<footer class="footer"><div class="wrap footer-inner"><div><a class="brand" href="/"><span class="brand-mark">W<span class="brand-dot">.</span></span><span>webcore<span class="brand-dot">.</span></span></a><p>Sites e sistemas com propósito.</p></div><div class="footer-right"><a href="#planos">Soluções</a><a href="#portfolio">Projetos</a><a href="https://wa.me/5518997463778" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a><small>© 2026 WebCore</small></div></div></footer>
+<footer class="footer"><div class="v2-footer-head wrap"><span>O PRÓXIMO PASSO É SEU.</span><a href="#orcamento">Vamos criar algo relevante? ↗</a></div><div class="wrap footer-inner"><div><a class="brand" href="/"><span class="brand-mark">W<span class="brand-dot">.</span></span><span>webcore<span class="brand-dot">.</span></span></a><p>Sites e sistemas com propósito.</p></div><div class="footer-right"><a href="#planos">Soluções</a><a href="#portfolio">Projetos</a><a href="https://wa.me/5518997463778" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a><small>© 2026 WebCore</small></div></div></footer>
 <script>
 (function(){
   'use strict';
+  var visualButtons=Array.from(document.querySelectorAll('[data-visual]'));
+  function setVisual(v){document.body.classList.toggle('visual-two',v==='2');visualButtons.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.visual===v));});try{localStorage.setItem('webcore-visual',v);}catch(e){}}
+  var initial='1';try{initial=localStorage.getItem('webcore-visual')==='2'?'2':'1';}catch(e){}
+  setVisual(initial);visualButtons.forEach(function(b){b.addEventListener('click',function(){setVisual(b.dataset.visual);});});
   var chosenPlan = null, hasMarketing = false;
   var buttons = Array.from(document.querySelectorAll('[data-plan]'));
   var marketingButton = document.getElementById('marketing-add');
