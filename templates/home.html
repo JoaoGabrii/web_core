@@ -1,8 +1,152 @@
-{% extends 'base.html' %}{% block content %}
-<header class="nav wrap"><a class="brand" href="/">&lt;/&gt; <b>webcore<span>.</span></b></a><nav><a href="#servicos">Serviços</a><a href="#marketing">Marketing digital</a><a href="#processo">Como funciona</a><a href="#portfolio">Portfólio</a><a class="navcta" href="#contato">Pedir orçamento ↗</a></nav></header>
-<main><section class="hero wrap"><div class="eyebrow">DESENVOLVIMENTO DIGITAL SOB MEDIDA <i></i></div><h1>Seu negócio merece<br>mais que <em>um site.</em></h1><p>Sites que transmitem confiança. Sistemas que organizam seu trabalho. Tecnologia que ajuda sua empresa a crescer.</p><div class="actions"><a class="btn" href="#contato">Quero meu orçamento <span>↗</span></a><a class="btn ghost" href="#servicos">Conhecer serviços ↓</a></div><div class="hero-tags"><span>✓ Design responsivo</span><span>✓ Soluções personalizadas</span><span>✓ Atendimento direto</span></div><div class="orb"></div></section>
-<section id="servicos" class="section light"><div class="wrap"><div class="section-top"><div><small>01 / O QUE FAZEMOS</small><h2>Ideias que viram<br><em>soluções reais.</em></h2></div><p>Do primeiro site à operação completa: construímos o que faz sentido para o seu negócio.</p></div><div class="cards"><article class="service"><span class="symbol">01</span><h3>Plano Simples</h3><h4>Landing page</h4><p>Uma página profissional, rápida e responsiva para apresentar sua empresa e receber contatos.</p><div class="price"><b>Orçamento personalizado</b></div><a href="#contato" onclick="document.querySelector('[name=service]').value='Plano Simples'">Escolher plano ↗</a></article><article class="service"><span class="symbol">02</span><h3>Plano Intermediário</h3><h4>Site editável</h4><p>Landing page com painel para alterar textos, imagens, títulos e conteúdos.</p><div class="price"><b>Orçamento personalizado</b></div><a href="#contato" onclick="document.querySelector('[name=service]').value='Plano Intermediário'">Escolher plano ↗</a></article><article class="service"><span class="symbol">03</span><h3>Plano Pro</h3><h4>Site + dados</h4><p>Tudo do Intermediário, com banco de dados e cadastro de clientes, alunos ou registros.</p><div class="price"><b>Orçamento personalizado</b></div><a href="#contato" onclick="document.querySelector('[name=service]').value='Plano Pro'">Escolher plano ↗</a></article><article class="service"><span class="symbol">04</span><h3>Plano Ultimate</h3><h4>Gestão completa</h4><p>Tudo do Pro, com painel administrativo, controle de acessos e perfis como administrador, gestor e líder.</p><div class="price"><b>Orçamento personalizado</b></div><a href="#contato" onclick="document.querySelector('[name=service]').value='Plano Ultimate'">Escolher plano ↗</a></article><article class="service"><span class="symbol">05</span><h3>Plano Ultimate + CRM</h3><h4>Gestão comercial</h4><p>Tudo do Ultimate, com CRM, funil de vendas, acompanhamento de contatos, oportunidades e relatórios comerciais. Marketing digital é opcional e contratado separadamente.</p><div class="price"><b>Orçamento personalizado</b></div><a href="#contato" onclick="document.querySelector('[name=service]').value='Plano Ultimate + CRM'">Escolher plano ↗</a></article></div><p class="fine">Cada projeto recebe uma proposta conforme suas necessidades. Hospedagem, domínio, banco de dados, manutenção e anúncios são definidos separadamente, quando aplicáveis.</p></div></section>
-<section id="marketing" class="section wrap"><small>02 / SERVIÇO ADICIONAL</small><h2>Marketing digital para<br><em>impulsionar seu negócio.</em></h2><p>Seu site pronto para receber visitantes. Agora, que tal atrair mais pessoas? Adicione marketing digital a qualquer plano WebCore ou contrate este serviço separadamente.</p><div class="cards"><article class="service"><span class="symbol">↗</span><h3>Marketing digital</h3><h4>Serviço opcional · mensal</h4><p>Planejamento de campanhas, gestão de anúncios, estratégias de captação de leads e acompanhamento dos resultados. O escopo e a frequência dos relatórios são definidos na proposta.</p><div class="price"><b>Mensalidade sob orçamento</b></div><p class="fine">A verba de anúncios é separada da mensalidade de gestão e definida por você.</p><a href="#contato" onclick="document.querySelector('[name=service]').value='Marketing digital (avulso)'">Quero marketing digital ↗</a></article></div></section><section id="processo" class="section wrap"><small>02 / NOSSO PROCESSO</small><h2>Simples para você.<br><em>Bem feito por nós.</em></h2><div class="steps"><div><b>01</b><h3>Conversa</h3><p>Entendemos seu negócio e o que precisa melhorar.</p></div><div><b>02</b><h3>Proposta</h3><p>Definimos escopo, prazo e investimento antes de começar.</p></div><div><b>03</b><h3>Desenvolvimento</h3><p>Criamos, testamos e ajustamos a solução.</p></div><div><b>04</b><h3>Entrega</h3><p>Publicamos e orientamos você sobre o uso.</p></div></div></section>
-<section id="portfolio" class="section light"><div class="wrap"><small>03 / PORTFÓLIO</small><h2>Projetos que falam<br><em>por si.</em></h2><div class="portfolio"><div class="portfolio-preview">WEBCORE <span>↗</span><p>Seu projeto pode aparecer aqui.</p></div><div><h3>Em breve, nossos projetos.</h3><p>Este espaço receberá trabalhos publicados com autorização dos clientes, imagens reais e links para conhecer cada solução.</p><a class="textlink" href="#contato">Vamos criar o próximo? ↗</a></div></div></div></section>
-<section id="contato" class="section wrap contact"><div><small>04 / VAMOS CONVERSAR</small><h2>Seu próximo projeto<br><em>começa aqui.</em></h2><p>Conte um pouco sobre sua ideia. Vamos entrar em contato para entender o que você precisa e preparar uma proposta.</p><div class="contact-links"><a target="_blank" rel="noopener" href="https://wa.me/5518997463778">Conversar no WhatsApp ↗</a>{% if email %}<a href="mailto:{{ email }}">Enviar e-mail ↗</a>{% endif %}{% if instagram %}<a target="_blank" rel="noopener" href="{{ instagram }}">Acessar Instagram ↗</a>{% endif %}</div></div><form id="orcamento-form" class="quote"><h3>Peça seu orçamento</h3><label>Seu nome<input name="name" required maxlength="120" placeholder="Como podemos chamar você?"></label><label>WhatsApp ou e-mail<input name="contact" required maxlength="160" placeholder="Seu melhor contato"></label><label>O que você precisa?<select name="service"><option>Plano Simples</option><option>Plano Intermediário</option><option>Plano Pro</option><option>Plano Ultimate</option><option>Plano Ultimate + CRM</option><option>Marketing digital (avulso)</option><option>Não sei qual plano escolher</option></select></label><label class="marketing-option"><input type="checkbox" name="marketing" value="Sim"> Quero adicionar marketing digital ao meu plano (serviço mensal opcional)</label><label>Conte sobre seu projeto<textarea name="message" maxlength="3000" rows="4" placeholder="O que você tem em mente?"></textarea></label><button class="btn" type="submit">Enviar orçamento pelo WhatsApp ↗</button><p class="fine">Ao enviar, você será direcionado ao WhatsApp com sua solicitação preenchida. Nenhum dado é armazenado neste site.</p><p id="sent" class="success" hidden>Solicitação recebida! Entraremos em contato.</p></form></section></main><footer class="wrap footer"><b>webcore<span>.</span></b><span>Tecnologia & soluções digitais</span><span>© 2026 WebCore</span></footer><script>document.getElementById('orcamento-form').addEventListener('submit',function(e){e.preventDefault();const d=new FormData(this);const msg=['Olá! Gostaria de solicitar um orçamento WebCore.','','*Plano:* '+d.get('service'),'*Nome:* '+d.get('name'),'*Contato:* '+d.get('contact'),'*Marketing digital mensal:* '+(d.get('marketing')?'Tenho interesse':'Não solicitado'),'*Projeto:* '+(d.get('message')||'Não informado')].join('\n');window.open('https://wa.me/5518997463778?text='+encodeURIComponent(msg),'_blank','noopener');});</script>
+{% extends 'base.html' %}
+{% block title %}WebCore | Sites, sistemas e crescimento digital{% endblock %}
+{% block content %}
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="brand" href="/" aria-label="WebCore, início"><span class="brand-mark">W<span class="brand-dot">.</span></span><span>webcore<span class="brand-dot">.</span></span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-nav"><span></span><span></span><span></span></button>
+    <nav class="site-nav" id="site-nav" aria-label="Navegação principal">
+      <a href="#planos">Soluções</a><a href="#marketing">Marketing digital</a><a href="#portfolio">Projetos</a><a href="#processo">Como trabalhamos</a>
+    </nav>
+    <a class="nav-quote" href="#orcamento"><span>Meu orçamento</span><span class="cart-count" id="cart-count">0</span><span aria-hidden="true">↗</span></a>
+  </div>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="wrap hero-layout">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="pulse-dot"></span> TECNOLOGIA QUE GERA RESULTADO</div>
+        <h1>Sua presença digital. <span>Em outro nível.</span></h1>
+        <p>Criamos experiências digitais que representam seu negócio — de uma página marcante a um sistema completo de gestão. Você escolhe as soluções. Nós construímos o caminho.</p>
+        <div class="hero-actions"><a href="#planos" class="btn btn-primary">Explorar soluções <span>↗</span></a><a href="#portfolio" class="btn btn-outline">Conhecer projetos <span>↗</span></a></div>
+        <div class="hero-trust"><span>✦ Sob medida para sua empresa</span><span>✦ Design responsivo</span><span>✦ Atendimento próximo</span></div>
+      </div>
+      <div class="hero-art" aria-label="Ilustração de painéis digitais">
+        <div class="art-glow"></div>
+        <div class="mock-window"><div class="mock-top"><span class="mock-dots"><i></i><i></i><i></i></span><span>webcore / seu projeto</span><span>↗</span></div><div class="mock-body"><div class="mock-label">EXPERIÊNCIA DIGITAL</div><div class="mock-heading">Design que<br><em>faz diferença.</em></div><div class="mock-lines"><span></span><span></span></div><div class="mock-pill">SEU NEGÓCIO, CONECTADO <b>→</b></div></div></div>
+        <div class="floating-panel floating-one"><span>✦</span><div><strong>Feito para você</strong><small>Soluções personalizadas</small></div></div>
+        <div class="floating-panel floating-two"><span>↗</span><div><strong>Do conceito à entrega</strong><small>Projetos com propósito</small></div></div>
+      </div>
+    </div>
+    <div class="hero-bottom wrap"><span>DESIGN · DESENVOLVIMENTO · ESTRATÉGIA</span><a href="#planos" aria-label="Rolar para os planos">↓ DESCUBRA MAIS</a></div>
+  </section>
+
+  <section id="planos" class="section plans-section">
+    <div class="wrap">
+      <div class="section-heading"><div><div class="kicker">01 / SOLUÇÕES WEBCORE</div><h2>O plano certo para a <span>sua próxima fase.</span></h2></div><p>Cada negócio está em um momento. Conheça as modalidades e monte uma proposta sem compromissos, com serviços selecionados por você.</p></div>
+      <div class="plan-grid">
+        <article class="plan-card" data-plan-card="Simples">
+          <div class="plan-top"><span class="plan-no">01 / ESSENCIAL</span><span class="plan-icon">◩</span></div>
+          <h3>Simples</h3><p class="plan-sub">Sua marca na internet, do jeito certo.</p>
+          <p class="plan-desc">Uma landing page focada em apresentação, credibilidade e contato rápido.</p>
+          <ul class="feature-list"><li>Visual profissional e identidade da marca</li><li>Adaptação para celular e computador</li><li>Seções, serviços e chamadas para ação</li><li>Formulário ou botão de WhatsApp</li><li>Publicação e orientações de uso</li></ul>
+          <div class="plan-foot"><span>Projeto sob orçamento</span><button type="button" class="choose-plan" data-plan="Simples" aria-pressed="false">Adicionar ao orçamento <b>＋</b></button></div>
+        </article>
+        <article class="plan-card" data-plan-card="Intermediário">
+          <div class="plan-top"><span class="plan-no">02 / AUTONOMIA</span><span class="plan-icon">▤</span></div>
+          <h3>Intermediário</h3><p class="plan-sub">Seu site, sob seu controle.</p>
+          <p class="plan-desc">Tudo do Simples, mais liberdade para manter o conteúdo atualizado sem depender de alterações no código.</p>
+          <ul class="feature-list"><li>Landing page completa</li><li>Painel privado para editar conteúdo</li><li>Alteração de textos, títulos e imagens</li><li>Gestão das seções acordadas</li><li>Acesso administrativo protegido</li></ul>
+          <div class="plan-foot"><span>Projeto sob orçamento</span><button type="button" class="choose-plan" data-plan="Intermediário" aria-pressed="false">Adicionar ao orçamento <b>＋</b></button></div>
+        </article>
+        <article class="plan-card plan-featured" data-plan-card="Pro">
+          <span class="featured-tag">PARA NEGÓCIOS EM CRESCIMENTO</span>
+          <div class="plan-top"><span class="plan-no">03 / ORGANIZAÇÃO</span><span class="plan-icon">▦</span></div>
+          <h3>Pro</h3><p class="plan-sub">Site e informações trabalhando juntos.</p>
+          <p class="plan-desc">Tudo do Intermediário, com um banco de dados estruturado para o seu tipo de operação.</p>
+          <ul class="feature-list"><li>Site com painel de edição</li><li>Banco de dados na nuvem</li><li>Cadastro de alunos, clientes ou registros</li><li>Consulta e atualização de informações</li><li>Campos e regras definidos no projeto</li></ul>
+          <div class="plan-foot"><span>Projeto sob orçamento</span><button type="button" class="choose-plan" data-plan="Pro" aria-pressed="false">Adicionar ao orçamento <b>＋</b></button></div>
+        </article>
+        <article class="plan-card" data-plan-card="Ultimate">
+          <div class="plan-top"><span class="plan-no">04 / CONTROLE</span><span class="plan-icon">◈</span></div>
+          <h3>Ultimate</h3><p class="plan-sub">Gestão profissional, múltiplos acessos.</p>
+          <p class="plan-desc">Tudo do Pro, com um ambiente administrativo adaptado à estrutura da sua equipe.</p>
+          <ul class="feature-list"><li>Banco de dados e painel de gestão</li><li>Usuários e perfis diferentes</li><li>Permissões por função ou setor</li><li>Ex.: administrador, gestor e líder</li><li>Rotinas, módulos e relatórios sob escopo</li></ul>
+          <div class="plan-foot"><span>Projeto sob orçamento</span><button type="button" class="choose-plan" data-plan="Ultimate" aria-pressed="false">Adicionar ao orçamento <b>＋</b></button></div>
+        </article>
+        <article class="plan-card" data-plan-card="Ultimate + CRM">
+          <div class="plan-top"><span class="plan-no">05 / OPERAÇÃO COMERCIAL</span><span class="plan-icon">⤴</span></div>
+          <h3>Ultimate <span class="title-accent">+ CRM</span></h3><p class="plan-sub">Da gestão ao relacionamento com clientes.</p>
+          <p class="plan-desc">Tudo do Ultimate, com ferramentas para organizar contatos e acompanhar oportunidades comerciais.</p>
+          <ul class="feature-list"><li>Controle de acessos e informações</li><li>CRM e cadastro de leads</li><li>Funil de atendimento e vendas</li><li>Histórico de contatos e acompanhamento</li><li>Indicadores comerciais combinados</li></ul>
+          <div class="plan-foot"><span>Projeto sob orçamento</span><button type="button" class="choose-plan" data-plan="Ultimate + CRM" aria-pressed="false">Adicionar ao orçamento <b>＋</b></button></div>
+        </article>
+      </div>
+      <div class="section-note"><span>ⓘ</span> Hospedagem, domínio, bancos de dados, manutenção, integrações e serviços de terceiros são dimensionados conforme o projeto e informados na proposta. Nenhum plano inclui marketing digital automaticamente.</div>
+    </div>
+  </section>
+
+  <section id="marketing" class="section marketing-section"><div class="wrap marketing-grid">
+    <div class="marketing-copy"><div class="kicker">02 / ADICIONAL OU SERVIÇO AVULSO</div><h2>Um bom site merece <span>ser encontrado.</span></h2><p>Marketing digital é um serviço <strong>separado e opcional</strong>. Você pode contratar sozinho ou combinar com qualquer plano WebCore para fortalecer sua presença e atrair novas oportunidades.</p><div class="marketing-points"><div><span>01</span><div><strong>Estratégia e planejamento</strong><p>Definição de objetivos, público e campanhas conforme a necessidade.</p></div></div><div><span>02</span><div><strong>Gestão de anúncios e captação</strong><p>Estruturação e acompanhamento de campanhas e geração de contatos.</p></div></div><div><span>03</span><div><strong>Acompanhamento mensal</strong><p>Análise de resultados, ajustes e relatórios no escopo contratado.</p></div></div></div></div>
+    <div class="marketing-offer"><div class="marketing-offer-top"><span class="marketing-service">SERVIÇO RECORRENTE</span><span class="offer-symbol">↗</span></div><h3>Marketing digital</h3><p>Adicione visibilidade ao seu projeto com acompanhamento profissional.</p><div class="monthly-label"><strong>Mensalidade personalizada</strong><span>Sem valor fixo no site</span></div><div class="ad-info"><strong>Importante:</strong> a verba destinada aos anúncios é independente da mensalidade de gestão. O investimento é combinado e aprovado antes do início.</div><button type="button" class="btn btn-primary marketing-add" id="marketing-add" aria-pressed="false">Adicionar marketing ao orçamento <span>＋</span></button><small>Também pode ser contratado sem nenhum plano de site.</small></div>
+  </div></section>
+
+  <section id="portfolio" class="section portfolio-section"><div class="wrap"><div class="section-heading"><div><div class="kicker">03 / TRABALHOS E PROJETOS</div><h2>Ideias que saem <span>da tela.</span></h2></div><p>Projetos reais de desenvolvimento, estudos e conceitos em construção. Cada trabalho tem sua própria proposta.</p></div>
+    <div class="project-grid">
+      <article class="project-card project-atc"><div class="project-visual"><div class="project-visual-top"><span>ATC</span><span>↗</span></div><div class="project-visual-name">Andradina<br>Tênis Clube</div><div class="project-visual-bottom">SITE INSTITUCIONAL • CONCEITO</div></div><div class="project-content"><span class="project-type">PROJETO EM DESENVOLVIMENTO</span><h3>Andradina Tênis Clube</h3><p>Conceito de site para clube com páginas institucionais, experiência para associados e recursos administrativos demonstrativos.</p><a href="https://atc-conceito-andradina.vercel.app/" target="_blank" rel="noopener noreferrer">Conhecer conceito ↗</a></div></article>
+      <article class="project-card project-della"><div class="project-visual"><div class="project-visual-top"><span>DL.</span><span>↗</span></div><div class="project-visual-name">Della<br>Looks</div><div class="project-visual-bottom">MODA • SITE RESPONSIVO</div></div><div class="project-content"><span class="project-type">PROJETO DE PORTFÓLIO</span><h3>Della Looks</h3><p>Experiência web para apresentação de peças de moda com interface responsiva e links para produtos.</p><a href="https://della-looks.vercel.app/" target="_blank" rel="noopener noreferrer">Visitar projeto ↗</a></div></article>
+      <article class="project-card project-portfolio"><div class="project-visual"><div class="project-visual-top"><span>JG.</span><span>↗</span></div><div class="project-visual-name">João<br>Gabriel</div><div class="project-visual-bottom">PORTFÓLIO DE DESENVOLVIMENTO</div></div><div class="project-content"><span class="project-type">PORTFÓLIO PROFISSIONAL</span><h3>Portfólio do desenvolvedor</h3><p>Conheça outros estudos e projetos de interfaces, desenvolvimento web e soluções digitais.</p><a href="https://github.com/JoaoGabrii/portfolio" target="_blank" rel="noopener noreferrer">Ver portfólio ↗</a></div></article>
+    </div>
+  </div></section>
+
+  <section id="processo" class="section process-section"><div class="wrap"><div class="kicker">04 / NOSSO MÉTODO</div><h2>Do primeiro contato <span>à entrega.</span></h2><div class="steps"><div><span>01</span><h3>Entender</h3><p>Conversamos sobre sua empresa, seu público e o problema que deseja resolver.</p></div><div><span>02</span><h3>Planejar</h3><p>Apresentamos escopo, prazos, investimento e eventuais custos recorrentes.</p></div><div><span>03</span><h3>Construir</h3><p>Desenvolvemos o projeto com etapas de revisão e testes.</p></div><div><span>04</span><h3>Entregar</h3><p>Publicamos a solução e orientamos sua equipe sobre o uso.</p></div></div></div></section>
+
+  <section id="orcamento" class="section quote-section"><div class="wrap quote-grid"><div class="quote-intro"><div class="kicker">05 / SUA PROPOSTA</div><h2>Vamos construir <span>algo incrível?</span></h2><p>Escolha até um plano de desenvolvimento e, se desejar, acrescente marketing digital. Ou contrate somente marketing. O orçamento é personalizado e enviado diretamente pelo WhatsApp.</p>
+    <div class="cart-panel"><div class="cart-header"><span>✧ RESUMO DO PEDIDO</span><span id="cart-badge">0 selecionados</span></div><div id="cart-plan" class="cart-line"><span>Plano de desenvolvimento</span><strong>Nenhum selecionado</strong></div><div id="cart-marketing" class="cart-line"><span>Marketing digital mensal</span><strong>Não adicionado</strong></div><div class="cart-footer"><span>Valores definidos em proposta</span><a href="#planos">Alterar seleção ↑</a></div></div>
+    <a class="direct-whatsapp" href="https://wa.me/5518997463778" target="_blank" rel="noopener noreferrer">Prefere conversar primeiro? <strong>Fale pelo WhatsApp ↗</strong></a></div>
+    <form id="orcamento-form" class="quote-form"><div class="form-title"><span>CONTE SOBRE SUA IDEIA</span><h3>Solicitar orçamento</h3><p>Sem compromisso. Vamos entender o que faz sentido para seu projeto.</p></div>
+      <label for="name">Seu nome <span>*</span></label><input id="name" name="name" maxlength="120" required autocomplete="name" placeholder="Como podemos chamar você?">
+      <label for="contact">WhatsApp ou e-mail <span>*</span></label><input id="contact" name="contact" maxlength="160" required placeholder="Seu melhor contato">
+      <label for="message">Sobre o que você precisa</label><textarea id="message" name="message" rows="4" maxlength="3000" placeholder="Conte um pouco sobre sua empresa e seu projeto..."></textarea>
+      <p id="selection-error" class="selection-error" role="alert" hidden>Selecione um plano, marketing digital ou ambos para continuar.</p>
+      <button class="btn btn-primary form-submit" type="submit">Enviar minha proposta pelo WhatsApp <span>↗</span></button>
+      <p class="privacy-note">Você revisará a mensagem no WhatsApp antes de enviá-la. O formulário não armazena seus dados na WebCore.</p>
+    </form>
+  </div></section>
+</main>
+<footer class="footer"><div class="wrap footer-inner"><div><a class="brand" href="/"><span class="brand-mark">W<span class="brand-dot">.</span></span><span>webcore<span class="brand-dot">.</span></span></a><p>Sites e sistemas com propósito.</p></div><div class="footer-right"><a href="#planos">Soluções</a><a href="#portfolio">Projetos</a><a href="https://wa.me/5518997463778" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a><small>© 2026 WebCore</small></div></div></footer>
+<script>
+(function(){
+  'use strict';
+  var chosenPlan = null, hasMarketing = false;
+  var buttons = Array.from(document.querySelectorAll('[data-plan]'));
+  var marketingButton = document.getElementById('marketing-add');
+  var menu = document.getElementById('site-nav');
+  var toggle = document.querySelector('.menu-toggle');
+  function update(){
+    buttons.forEach(function(button){
+      var active=button.dataset.plan===chosenPlan;
+      button.setAttribute('aria-pressed',String(active));
+      button.innerHTML=active?'Selecionado <b>✓</b>':'Adicionar ao orçamento <b>＋</b>';
+      button.closest('.plan-card').classList.toggle('selected',active);
+    });
+    marketingButton.setAttribute('aria-pressed',String(hasMarketing));
+    marketingButton.innerHTML=hasMarketing?'Marketing adicionado <span>✓</span>':'Adicionar marketing ao orçamento <span>＋</span>';
+    document.querySelector('.marketing-offer').classList.toggle('selected',hasMarketing);
+    document.querySelector('#cart-plan strong').textContent=chosenPlan?'Plano '+chosenPlan:'Nenhum selecionado';
+    document.querySelector('#cart-marketing strong').textContent=hasMarketing?'Incluído · serviço mensal':'Não adicionado';
+    var count=(chosenPlan?1:0)+(hasMarketing?1:0);
+    document.getElementById('cart-count').textContent=String(count);
+    document.getElementById('cart-badge').textContent=count+' '+(count===1?'serviço':'serviços');
+    document.getElementById('selection-error').hidden=true;
+  }
+  buttons.forEach(function(button){button.addEventListener('click',function(){
+    chosenPlan=chosenPlan===button.dataset.plan?null:button.dataset.plan;
+    update();
+  });});
+  marketingButton.addEventListener('click',function(){hasMarketing=!hasMarketing;update();});
+  toggle.addEventListener('click',function(){var open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});
+  menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');toggle.setAttribute('aria-expanded','false');});});
+  document.getElementById('orcamento-form').addEventListener('submit',function(e){
+    e.preventDefault();
+    if(!chosenPlan&&!hasMarketing){document.getElementById('selection-error').hidden=false;document.getElementById('selection-error').scrollIntoView({behavior:'smooth',block:'center'});return;}
+    if(!this.reportValidity())return;
+    var data=new FormData(this);
+    var summary=['Olá! Gostaria de solicitar um orçamento da WebCore.','','*Plano de desenvolvimento:* '+(chosenPlan?'Plano '+chosenPlan:'Não selecionado'),'*Marketing digital:* '+(hasMarketing?'Sim — serviço mensal':'Não selecionado'),'', '*Nome:* '+data.get('name'),'*Contato:* '+data.get('contact'),'*Sobre o projeto:* '+(data.get('message')||'Gostaria de conversar para definir os detalhes.'),'','Aguardo informações sobre proposta, prazo e eventuais custos recorrentes.'].join('\n');
+    window.location.href='https://wa.me/5518997463778?text='+encodeURIComponent(summary);
+  });
+  update();
+})();
+</script>
 {% endblock %}
