@@ -105,14 +105,14 @@
   <section id="processo" class="section process-section"><div class="wrap"><div class="kicker">04 / NOSSO MÉTODO</div><h2>Do primeiro contato <span>à entrega.</span></h2><div class="steps"><div><span>01</span><h3>Entender</h3><p>Conversamos sobre sua empresa, seu público e o problema que deseja resolver.</p></div><div><span>02</span><h3>Planejar</h3><p>Apresentamos escopo, prazos, investimento e eventuais custos recorrentes.</p></div><div><span>03</span><h3>Construir</h3><p>Desenvolvemos o projeto com etapas de revisão e testes.</p></div><div><span>04</span><h3>Entregar</h3><p>Publicamos a solução e orientamos sua equipe sobre o uso.</p></div></div></div></section>
 
   <section id="orcamento" class="section quote-section"><div class="wrap quote-grid"><div class="quote-intro"><div class="kicker">05 / SUA PROPOSTA</div><h2>Vamos construir <span>algo incrível?</span></h2><p>Escolha até um plano de desenvolvimento e, se desejar, acrescente marketing digital. Ou contrate somente marketing. O orçamento é personalizado e enviado diretamente pelo WhatsApp.</p>
-    <div class="cart-panel"><div class="cart-header"><span>✧ RESUMO DO PEDIDO</span><span id="cart-badge">0 selecionados</span></div><div id="cart-plan" class="cart-line"><span>Plano de desenvolvimento</span><strong>Nenhum selecionado</strong></div><div id="cart-marketing" class="cart-line"><span>Marketing digital mensal</span><strong>Não adicionado</strong></div><div class="cart-footer"><span>Valores definidos em proposta</span><a href="#planos">Alterar seleção ↑</a></div></div>
+    <div class="cart-panel"><div class="cart-header"><span>✧ RESUMO DO PEDIDO</span><span id="cart-badge">0 selecionados</span></div><div id="cart-plan" class="cart-line"><span>Plano de desenvolvimento</span><strong>Nenhum selecionado</strong></div><div id="cart-marketing" class="cart-line"><span>Marketing digital mensal</span><strong>Não adicionado</strong></div><div class="cart-preview-head"><strong>Prévia da mensagem</strong><span>Atualizada automaticamente</span></div><div id="quote-preview" class="quote-preview" aria-live="polite"></div><div class="cart-footer"><span>Valores definidos em proposta</span><a href="#planos">Alterar seleção ↑</a></div></div>
     <a class="direct-whatsapp" id="whatsapp-first" href="https://wa.me/5518997463778" target="_blank" rel="noopener noreferrer">Atendimento mais rápido: <strong>conversar no WhatsApp ↗</strong></a><p class="contact-alternative">Prefere preencher os detalhes? Use o formulário ao lado.</p></div>
     <form id="orcamento-form" class="quote-form"><div class="form-title"><span>CONTE SOBRE SUA IDEIA</span><h3>Solicitar orçamento</h3><p>Fale agora pelo WhatsApp ou prepare uma mensagem personalizada.</p></div>
       <label for="name">Seu nome <span>*</span></label><input id="name" name="name" maxlength="120" required autocomplete="name" placeholder="Como podemos chamar você?">
-      <label for="contact">WhatsApp ou e-mail <span>*</span></label><input id="contact" name="contact" maxlength="160" required placeholder="Seu melhor contato">
+      <label for="contact">Seu WhatsApp <span>*</span></label><input id="contact" name="contact" type="tel" inputmode="tel" maxlength="25" required autocomplete="tel" placeholder="(18) 99999-9999"><label for="email">Seu e-mail <span class="optional-label">opcional</span></label><input id="email" name="email" type="email" maxlength="160" autocomplete="email" placeholder="voce@empresa.com">
       <label for="message">Sobre o que você precisa</label><textarea id="message" name="message" rows="4" maxlength="3000" placeholder="Conte um pouco sobre sua empresa e seu projeto..."></textarea>
       <p id="selection-error" class="selection-error" role="alert" hidden>Selecione um plano, marketing digital ou ambos para continuar.</p>
-      <button class="btn btn-primary form-submit" type="submit">Continuar para o WhatsApp <span>↗</span></button>
+      <button class="btn btn-primary form-submit" type="submit">Abrir mensagem pronta no WhatsApp <span>↗</span></button><button class="quote-copy" type="button" id="copy-quote">Copiar mensagem do orçamento</button>
       <p class="privacy-note">O formulário prepara a mensagem, mas não salva nem envia dados automaticamente. Confirme o envio no WhatsApp.</p>
     </form>
   </div></section>
@@ -130,6 +130,14 @@
   var marketingButton = document.getElementById('marketing-add');
   var menu = document.getElementById('site-nav');
   var toggle = document.querySelector('.menu-toggle');
+  function quoteText(){
+    var name=document.getElementById("name").value.trim();
+    var contact=document.getElementById("contact").value.trim();
+    var email=document.getElementById("email").value.trim();
+    var details=document.getElementById("message").value.trim();
+    return ["Olá, equipe WebCore! 👋","", "Gostaria de receber uma proposta personalizada para meu negócio.","", "🛒 *Minha seleção*","• Desenvolvimento: "+(chosenPlan?"Plano "+chosenPlan:"Não selecionado"),"• Marketing digital: "+(hasMarketing?"Sim, quero incluir o serviço mensal":"Não selecionado"),"", "👤 *Meus dados*","• Nome: "+(name||"A informar"),"• WhatsApp: "+(contact||"A informar"),"• E-mail: "+(email||"Não informado"),"", "💬 *Sobre o projeto*",(details||"Gostaria de conversar sobre as possibilidades e os próximos passos."),"","Podem me explicar os próximos passos, prazos e condições? Obrigado!"].join("\n");
+  }
+  function refreshPreview(){document.getElementById("quote-preview").textContent=quoteText();}
   function update(){
     buttons.forEach(function(button){
       var active=button.dataset.plan===chosenPlan;
@@ -146,6 +154,7 @@
     document.getElementById('cart-count').textContent=String(count);
     document.getElementById('cart-badge').textContent=count+' '+(count===1?'serviço':'serviços');
     document.getElementById('selection-error').hidden=true;
+    refreshPreview();
   }
   buttons.forEach(function(button){button.addEventListener('click',function(){
     chosenPlan=chosenPlan===button.dataset.plan?null:button.dataset.plan;
@@ -158,10 +167,11 @@
     e.preventDefault();
     if(!chosenPlan&&!hasMarketing){document.getElementById('selection-error').hidden=false;document.getElementById('selection-error').scrollIntoView({behavior:'smooth',block:'center'});return;}
     if(!this.reportValidity())return;
-    var data=new FormData(this);
-    var summary=['Olá! Gostaria de solicitar um orçamento da WebCore.','','*Plano de desenvolvimento:* '+(chosenPlan?'Plano '+chosenPlan:'Não selecionado'),'*Marketing digital:* '+(hasMarketing?'Sim — serviço mensal':'Não selecionado'),'', '*Nome:* '+data.get('name'),'*Contato:* '+data.get('contact'),'*Sobre o projeto:* '+(data.get('message')||'Gostaria de conversar para definir os detalhes.'),'','Aguardo informações sobre proposta, prazo e eventuais custos recorrentes.'].join('\n');
+    var summary=quoteText();
     window.open('https://wa.me/5518997463778?text='+encodeURIComponent(summary),'_blank','noopener,noreferrer');
   });
+  ['name','contact','email','message'].forEach(function(id){document.getElementById(id).addEventListener('input',refreshPreview);});
+  document.getElementById('copy-quote').addEventListener('click',function(){var button=this; if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(quoteText()).then(function(){button.textContent='Mensagem copiada ✓';setTimeout(function(){button.textContent='Copiar mensagem do orçamento';},2200);}).catch(function(){button.textContent='Selecione o texto da prévia para copiar';});}else{button.textContent='Selecione o texto da prévia para copiar';}});
   var fastLink=document.getElementById('whatsapp-first');
   fastLink.addEventListener('click',function(){var msg='Olá! Gostaria de conversar sobre '+(chosenPlan?'o plano '+chosenPlan:'soluções digitais')+(hasMarketing?' com marketing digital mensal':'')+'. Podemos fazer um orçamento?';fastLink.href='https://wa.me/5518997463778?text='+encodeURIComponent(msg);});
   update();
