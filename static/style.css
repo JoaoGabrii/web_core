@@ -693,3 +693,18 @@ body:not(.visual-two) .project-content h3{color:#19372e}
 body:not(.visual-two) .plan-card:not(.plan-featured) p,
 body:not(.visual-two) .project-content p{color:#576b60}
 body:not(.visual-two) .footer p{color:#c7d7cb}
+
+
+/* Nomads Barbell Club project card — branded preview, not a screenshot */
+.curated-projects .project-nomads{grid-column:1/-1}
+.project-nomads .nomads-preview{display:flex;flex-direction:column;justify-content:space-between;padding:26px 36px;min-height:285px;background:radial-gradient(ellipse at 80% 20%,#4b5648 0%,transparent 48%),linear-gradient(135deg,#131915,#242d25 70%,#121714);color:#f5f3e9;overflow:hidden;position:relative}
+.project-nomads .nomads-preview:after{content:'';position:absolute;width:290px;height:290px;border:45px solid #ffffff09;border-radius:50%;right:12%;top:-50px;pointer-events:none}
+.nomads-visual-top,.nomads-visual-bottom{display:flex;justify-content:space-between;align-items:center;position:relative;z-index:1}
+.nomads-symbol{font-size:25px;font-weight:900;letter-spacing:-3px}.nomads-symbol span{color:#d7f15e}
+.nomads-category,.nomads-visual-bottom,.nomads-small{font-size:10px;letter-spacing:2px;font-weight:800;color:#c6d1bd}
+.nomads-visual-center{position:relative;z-index:1;display:flex;flex-direction:column;gap:12px}
+.nomads-visual-center strong{font-size:clamp(32px,5vw,60px);line-height:.92;letter-spacing:-.06em;font-weight:900}
+.nomads-visual-center em{font-style:normal;color:#d7f15e}
+.nomads-visit{font-size:11px;font-weight:800;letter-spacing:1px}
+.project-nomads .project-content{padding-top:20px}
+@media(max-width:650px){.project-nomads .nomads-preview{min-height:245px;padding:20px}.nomads-visual-center strong{font-size:clamp(29px,9vw,45px)}}
