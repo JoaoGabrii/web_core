@@ -1,5 +1,20 @@
 {% extends 'base.html' %}
-{% block title %}WebCore | Sites, sistemas e crescimento digital{% endblock %}
+{% block title %}WebCore | Sites, sistemas e crescimento digital<script>
+(function(){
+ const track=document.getElementById('projects-carousel');
+ const prev=document.getElementById('projects-prev'),next=document.getElementById('projects-next');
+ const counter=document.getElementById('projects-position'),progress=document.getElementById('projects-progress');
+ if(!track||!prev||!next)return;
+ const cards=Array.from(track.querySelectorAll('.project-card'));
+ const current=()=>{const x=track.scrollLeft;let closest=0,dist=Infinity;cards.forEach((c,i)=>{const d=Math.abs(c.offsetLeft-cards[0].offsetLeft-x);if(d<dist){dist=d;closest=i}});return closest};
+ const update=()=>{const i=current();counter.innerHTML=String(i+1).padStart(2,'0')+' <span>/ '+String(cards.length).padStart(2,'0')+'</span>';progress.style.width=((i+1)/cards.length*100)+'%';prev.disabled=i===0;next.disabled=i===cards.length-1};
+ const go=i=>{const n=Math.max(0,Math.min(cards.length-1,i));track.scrollTo({left:cards[n].offsetLeft-cards[0].offsetLeft,behavior:'smooth'})};
+ prev.addEventListener('click',()=>go(current()-1));next.addEventListener('click',()=>go(current()+1));
+ track.addEventListener('scroll',()=>requestAnimationFrame(update),{passive:true});
+ track.addEventListener('keydown',e=>{if(e.key==='ArrowRight'){e.preventDefault();go(current()+1)}if(e.key==='ArrowLeft'){e.preventDefault();go(current()-1)}});
+ window.addEventListener('resize',update);update();
+})();
+</script>{% endblock %}
 {% block content %}
 <div class="visual-switch" role="group" aria-label="Escolher aparência do site"><button type="button" data-visual="1" aria-pressed="true">Visual 1</button><button type="button" data-visual="2" aria-pressed="false">Visual 2</button></div>
 <header class="topbar">
@@ -96,11 +111,11 @@
   </div></section>
 
   <section id="portfolio" class="section portfolio-section"><div class="wrap"><div class="section-heading"><div><div class="kicker">03 / PROJETOS SELECIONADOS</div><h2>Soluções na <span>prática.</span></h2></div><p>Conheça nossos projetos de sites e sistemas para diferentes negócios.</p></div>
-    <div class="project-grid curated-projects">
+    <div class="portfolio-carousel-heading"><span>PROJETOS EM DESTAQUE <b>03 / 03</b></span><div class="portfolio-carousel-controls"><button type="button" id="projects-prev" aria-label="Projeto anterior">←</button><button type="button" id="projects-next" aria-label="Próximo projeto">→</button></div></div><div class="project-grid curated-projects" id="projects-carousel" role="region" aria-label="Carrossel de projetos" tabindex="0">
       <article class="project-card project-atc"><a class="project-visual" href="https://atc-conceito-andradina.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Conhecer site do Andradina Tênis Clube"><img loading="lazy" src="https://atc-conceito-andradina.vercel.app/static/atc/piscinas-aerea.jpg" alt="Fotografia das piscinas do Andradina Tênis Clube"></a><div class="project-content"><span class="project-type">SITE INSTITUCIONAL · ATC</span><h3>Andradina Tênis Clube</h3><p>Site institucional do clube, com conteúdo, apresentação de espaços e recursos de administração.</p><a href="https://atc-conceito-andradina.vercel.app/" target="_blank" rel="noopener noreferrer">Explorar site ↗</a></div></article>
       <article class="project-card project-calendar"><a class="project-visual calendar-preview" href="https://luar-circus.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Conhecer calendário online Luar Circus"><div class="calendar-demo"><div class="calendar-demo-head"><span>✦ Luar Circus</span><span>Controle de turmas</span></div><div class="calendar-demo-title">Presenças e alunas <small>Visão de calendário</small></div><div class="calendar-week"><span>SEG</span><span>TER</span><span>QUA</span><span>QUI</span><span>SEX</span></div><div class="calendar-slots"><i></i><i class="filled"></i><i class="filled"></i><i class="filled"></i><i></i><i></i><i class="filled"></i><i></i><i class="filled"></i><i></i></div><div class="calendar-demo-foot">Prévia ilustrativa · Abrir sistema real ↗</div></div></a><div class="project-content"><span class="project-type">SISTEMA WEB · CONTROLE DE ALUNAS</span><h3>Calendário Online — Luar Circus</h3><p>Controle de turmas, cadastro de alunas e registro de presenças em um painel acessível pelo celular.</p><a href="https://luar-circus.vercel.app/" target="_blank" rel="noopener noreferrer">Conhecer sistema ↗</a></div></article>
       <article class="project-card project-nomads"><a class="project-visual nomads-preview" href="https://nomads-barbell-club.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Abrir o site real do Nomads Barbell Club"><div class="nomads-live-frame"><iframe title="Prévia real do site Nomads Barbell Club" src="https://nomads-barbell-club.vercel.app/" loading="lazy" tabindex="-1" aria-hidden="true"></iframe><div class="nomads-live-fallback"><span>NOMAD'S BARBELL CLUB</span><strong>SEU LIMITE<br>É SÓ O <em>COMEÇO.</em></strong><small>ABRIR SITE REAL ↗</small></div></div><span class="nomads-live-label">VISUALIZAÇÃO DO SITE REAL <b>↗</b></span></a><div class="project-content"><span class="project-type">SITE WEB · CROSSFIT</span><h3>Nomads Barbell Club</h3><p>Identidade forte para o universo do CrossFit, com apresentação do box, experiência responsiva e contato direto.</p><a href="https://nomads-barbell-club.vercel.app/" target="_blank" rel="noopener noreferrer">Explorar site real ↗</a></div></article>
-    </div><p class="portfolio-note">Conheça os projetos e as diferentes soluções digitais que podemos desenvolver para seu negócio.</p>
+    </div><div class="portfolio-carousel-footer"><span id="projects-position">01 <span>/ 03</span></span><div class="portfolio-progress"><i id="projects-progress"></i></div><span>Deslize para explorar os projetos</span></div>
   </div></section>
 
   <section id="processo" class="section process-section"><div class="wrap"><div class="kicker">04 / NOSSO MÉTODO</div><h2>Do primeiro contato <span>à entrega.</span></h2><div class="steps"><div><span>01</span><h3>Entender</h3><p>Conversamos sobre sua empresa, seu público e o problema que deseja resolver.</p></div><div><span>02</span><h3>Planejar</h3><p>Apresentamos escopo, prazos, investimento e eventuais custos recorrentes.</p></div><div><span>03</span><h3>Construir</h3><p>Desenvolvemos o projeto com etapas de revisão e testes.</p></div><div><span>04</span><h3>Entregar</h3><p>Publicamos a solução e orientamos sua equipe sobre o uso.</p></div></div></div></section>
