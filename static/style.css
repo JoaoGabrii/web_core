@@ -708,3 +708,11 @@ body:not(.visual-two) .footer p{color:#c7d7cb}
 .nomads-visit{font-size:11px;font-weight:800;letter-spacing:1px}
 .project-nomads .project-content{padding-top:20px}
 @media(max-width:650px){.project-nomads .nomads-preview{min-height:245px;padding:20px}.nomads-visual-center strong{font-size:clamp(29px,9vw,45px)}}
+
+
+/* WC monogram concept — both site appearances */
+.brand-mark{display:inline-flex;align-items:center;justify-content:center;flex:none;overflow:hidden}
+.brand-mark .wc-monogram{display:block;width:78%;height:78%;max-width:34px;max-height:34px;fill:currentColor}
+body:not(.visual-two) .brand-mark{background:#18352e;color:#d7f15e}
+.visual-two .brand-mark{background:#d7f15e;color:#18352e}
+.footer .brand-mark,body:not(.visual-two) .footer .brand-mark{background:#d7f15e;color:#18352e}
