@@ -747,3 +747,8 @@ body:not(.visual-two) .brand-mark{background:#18352e;color:#d7f15e}
 .visual-two .quote-form .form-submit{background:#19382e;color:#fff;border-radius:7px}
 .visual-two .quote-form .form-submit:hover{background:#315c48}
 @media(max-width:650px){.project-nomads .nomads-preview{min-height:255px;padding:12px}.nomads-browser-screen{min-height:200px;padding:16px}.nomads-site-hero strong{font-size:clamp(28px,7vw,42px)}.nomads-site-bottom{gap:14px}}
+
+
+/* Official selected WC monogram, faithfully traced from supplied image */
+body:not(.visual-two) .brand-mark,.visual-two .brand-mark,.footer .brand-mark,body:not(.visual-two) .footer .brand-mark{background:#173b2d;color:#d7f15e;border:0;border-radius:8px;box-shadow:none}
+.brand-mark .wc-monogram{width:92%;height:88%;max-width:none;max-height:none;display:block}
