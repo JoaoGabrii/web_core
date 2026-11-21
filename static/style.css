@@ -1074,3 +1074,23 @@ body .wc-footer{padding:40px 0 16px;background:#102620;color:#edf3e9}
 .quote-form .delivery-wa input{width:15px!important;height:15px!important;margin:0;accent-color:#37654c;flex:none}
 .quote-form .delivery-wa span{color:inherit}
 .quote-form #send-status:empty{display:none}
+
+/* WC PLANS COMMERCIAL V1 — removable visual override */
+body:not(.visual-two) #planos{background:#e8eee4;border-block:1px solid #d0ddca}
+body:not(.visual-two) #planos .section-heading{margin-bottom:24px}
+body:not(.visual-two) #planos .kicker{display:inline-flex;padding:6px 11px;border-radius:5px;background:#193b31;color:#e4f6ae}
+body:not(.visual-two) #planos .plan-grid{gap:14px}
+body:not(.visual-two) #planos .plan-card{background:#fff;border:1px solid #c8d8c3;border-top:4px solid #73965d;border-radius:12px;padding:18px;box-shadow:0 5px 16px #193b310b}
+body:not(.visual-two) #planos .plan-card h3{font-size:23px;margin:9px 0 5px}
+body:not(.visual-two) #planos .plan-card .plan-desc{margin-bottom:8px}
+body:not(.visual-two) #planos .plan-card .plan-sub{margin-bottom:9px}
+body:not(.visual-two) #planos .plan-card .feature-list li{font-size:12px;line-height:1.45;margin-bottom:5px}
+body:not(.visual-two) #planos .plan-foot{padding-top:11px}
+body:not(.visual-two) #planos .plan-foot>span{font-weight:600;margin-bottom:8px}
+body:not(.visual-two) #planos .plan-card .choose-plan{min-height:42px}
+body:not(.visual-two) #planos .plan-featured{background:#193b31;border-color:#193b31;border-top-color:#d7f15e;padding-top:29px}
+body:not(.visual-two) #planos .plan-featured .plan-foot>span{color:#d2e1d5}
+body:not(.visual-two) #planos .plan-card.selected{border-color:#709d48;box-shadow:0 0 0 2px #9dc477}
+body:not(.visual-two) #planos .plan-card .choose-plan[aria-pressed=true]{background:#d7f15e;color:#193b31;outline:1px solid #91b34b}
+@media(min-width:1350px){body:not(.visual-two) #planos .plan-grid{grid-template-columns:repeat(5,minmax(0,1fr))}body:not(.visual-two) #planos .plan-card:nth-child(n){grid-column:auto;padding-inline:14px}body:not(.visual-two) #planos .plan-card h3{font-size:21px}body:not(.visual-two) #planos .choose-plan{font-size:11px;padding:10px 8px;gap:4px}body:not(.visual-two) #planos .featured-tag{font-size:8px;letter-spacing:0;padding-inline:7px}}
+/* END WC PLANS COMMERCIAL V1 */
