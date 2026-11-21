@@ -1055,3 +1055,22 @@ body .wc-footer{padding:40px 0 16px;background:#102620;color:#edf3e9}
 .pf-trust{display:flex;align-items:center;gap:16px;background:#e8eee2;padding:20px 24px;border-radius:12px;margin-top:22px;color:#173b30}
 .pf-trust>span{font-size:30px;color:#638b49}.pf-trust p{font-size:13px;margin:5px 0 0}.pf-trust>a{margin-left:auto;white-space:nowrap;font-size:13px;font-weight:800;color:#173b30}
 @media(max-width:760px){.pf-premium .pf-stage{padding:32px 14px 14px}.pf-premium .pf-stage-label{left:14px}.pf-premium .pf-content{padding:18px}.pf-premium .pf-content>p{min-height:0}.pf-trust{flex-wrap:wrap}.pf-trust>a{margin-left:0}.show-nom-copy strong{font-size:clamp(22px,6vw,45px)}.show-luar aside>div{padding:4px 2px}.show-luar-body{padding:6px;gap:3px}.show-welcome{padding:6px;min-height:50px}.show-today{padding:4px}.show-stats span{padding:2px 4px}.show-luar aside{padding:6px 4px}}
+
+/* Discreet optional email delivery */
+.quote-form .delivery-options{margin:15px 0 10px;border:1px solid #e1e5da;border-radius:12px;background:#fafbf8;padding:12px 14px}
+.quote-form .delivery-toggle{display:flex;align-items:center;gap:12px;margin:0!important;cursor:pointer;position:relative}
+.delivery-toggle>span:first-child{flex:1;color:#19382e}
+.delivery-toggle strong{display:block;font-size:13px}
+.delivery-toggle small{display:block;font-weight:400;color:#748178;font-size:11px;margin-top:3px}
+.quote-form .delivery-toggle input{position:absolute;right:0;width:38px!important;height:24px!important;opacity:0;cursor:pointer;margin:0}
+.delivery-switch{width:38px;height:22px;border-radius:20px;background:#d5ddd3;position:relative;flex:none;pointer-events:none;transition:background .2s}
+.delivery-switch:after{content:"";position:absolute;left:3px;top:3px;width:16px;height:16px;border-radius:50%;background:white;box-shadow:0 1px 4px #0002;transition:transform .2s}
+.delivery-toggle input:checked+.delivery-switch{background:#37654c}
+.delivery-toggle input:checked+.delivery-switch:after{transform:translateX(16px)}
+.delivery-toggle input:focus-visible+.delivery-switch{outline:2px solid #37654c;outline-offset:3px}
+.delivery-email{border-top:1px solid #e1e5da;margin-top:12px;padding-top:5px}
+.delivery-email[hidden]{display:none!important}
+.quote-form .delivery-wa{display:flex;align-items:center;gap:8px;font-size:12px;color:#42604d;cursor:pointer;margin:12px 0 2px!important}
+.quote-form .delivery-wa input{width:15px!important;height:15px!important;margin:0;accent-color:#37654c;flex:none}
+.quote-form .delivery-wa span{color:inherit}
+.quote-form #send-status:empty{display:none}
