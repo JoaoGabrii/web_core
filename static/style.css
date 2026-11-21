@@ -1003,3 +1003,5 @@ body .wc-footer{padding:40px 0 16px;background:#102620;color:#edf3e9}
 /* Match social icon interactions, even before Instagram has a destination. */
 .wc-footer .footer-social>.footer-instagram{cursor:pointer;transition:transform .2s,filter .2s,background .2s,color .2s}
 .wc-footer .footer-social>.footer-instagram:hover{transform:translateY(-2px);filter:brightness(1.16);color:#fff}
+
+.wc-footer .footer-social>a.footer-instagram,.wc-footer .footer-social>a.footer-instagram:hover{background:radial-gradient(circle at 25% 95%,#f9ce34,#f77737 25%,#d62976 55%,#8134af 90%);color:#fff;opacity:1}
