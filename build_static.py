@@ -33,6 +33,9 @@ if OUT.exists():
 OUT.mkdir()
 (OUT / "index.html").write_text(page, encoding="utf-8")
 shutil.copytree(ROOT / "static", OUT / "static")
+shutil.copy2(ROOT / "privacidade.html", OUT / "privacidade.html")
+(OUT / "robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://web-core.jgabriel-souza.workers.dev/sitemap.xml\n", encoding="utf-8")
+(OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://web-core.jgabriel-souza.workers.dev/</loc></url><url><loc>https://web-core.jgabriel-souza.workers.dev/privacidade.html</loc></url></urlset>', encoding="utf-8")
 (OUT / "_headers").write_text(
     "/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n"
     "/static/*\n  Cache-Control: public, max-age=3600\n",
