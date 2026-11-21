@@ -914,3 +914,34 @@ body:not(.visual-two) .footer .brand-mark{color:#d7f15e!important}
 .contact-channels a.channel-link:hover{transform:translateY(-3px);border-color:#81ae77;box-shadow:0 6px 18px #173b2d13}
 .contact-channels a.channel-link:focus-visible{outline:2px solid #16784b;outline-offset:3px}
 @media(max-width:480px){.contact-channels .channel-link{flex-basis:100%}}
+
+/* Visual 2 is now Visual 1 in compact mode. No content is removed. */
+body.visual-compact .section{padding:28px 0}
+body.visual-compact .topbar-inner{height:62px}
+body.visual-compact .hero-layout{min-height:0;padding:22px 0;gap:24px}
+body.visual-compact .hero-art{min-height:300px}
+body.visual-compact .section-heading{margin-bottom:12px}
+body.visual-compact .marketing-grid{gap:20px}
+body.visual-compact .marketing-copy>p{margin:12px 0 16px;line-height:1.55}
+body.visual-compact .marketing-points{gap:10px;margin-top:12px}
+body.visual-compact .marketing-points>div{margin-bottom:4px}
+body.visual-compact .marketing-points p{margin-top:3px}
+body.visual-compact .marketing-offer{padding:18px}
+body.visual-compact .client-showcase{gap:16px}
+body.visual-compact .client-feature,body.visual-compact .client-gallery{min-height:280px}
+body.visual-compact .client-info{padding:22px}
+body.visual-compact .quote-grid{gap:20px}
+body.visual-compact .quote-form{padding:16px 20px}
+body.visual-compact .form-title h3{margin:4px 0}
+body.visual-compact .form-title p{margin:4px 0 8px;line-height:1.4}
+body.visual-compact .quote-form label{margin:8px 0 4px}
+body.visual-compact .quote-form input,body.visual-compact .quote-form textarea{padding:9px 12px;font-size:14px;line-height:1.4}
+body.visual-compact .quote-form textarea{min-height:65px;height:65px}
+body.visual-compact .quote-form .form-submit{padding:12px 16px;margin-top:10px}
+body.visual-compact .quote-copy{padding:9px 12px;margin-top:7px}
+body.visual-compact .quote-intro>p{margin:10px 0 14px;line-height:1.5}
+body.visual-compact .cart-line{padding-block:12px}
+body.visual-compact .contact-channels{margin-top:14px!important}
+body.visual-compact .contact-channels .channel-link{padding:9px 12px!important}
+@media(min-width:851px){html:has(body.visual-compact){scroll-padding-top:68px}}
+@media(max-width:850px){body.visual-compact .section{padding:24px 0}body.visual-compact .quote-grid{gap:18px}body.visual-compact .hero-art{min-height:280px}body.visual-compact .site-nav{top:61px}}
