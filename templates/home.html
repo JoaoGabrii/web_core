@@ -107,7 +107,7 @@
       <label for="contact">Seu WhatsApp <span>*</span></label><input id="contact" name="contact" type="tel" inputmode="tel" maxlength="25" title="Informe um telefone com DDD" required autocomplete="tel" placeholder="(18) 99999-9999">
       <label for="message">Sobre o que você precisa</label><textarea id="message" name="message" rows="4" maxlength="3000" placeholder="Conte um pouco sobre sua empresa e seu projeto..."></textarea>
       <p id="selection-error" class="selection-error" role="alert" hidden>Selecione um plano, marketing digital ou ambos para continuar.</p>
-      <div class="delivery-options"><label class="delivery-toggle" for="email-toggle"><span><strong>Enviar também por e-mail?</strong></span><input type="checkbox" id="email-toggle" role="switch" aria-controls="email-options"><span class="delivery-switch" aria-hidden="true"></span></label><div id="email-options" class="delivery-email" hidden><label for="email">Seu e-mail <span>*</span></label><input id="email" name="email" type="email" maxlength="160" autocomplete="email" placeholder="voce@empresa.com" disabled></div></div><button class="btn btn-primary form-submit" type="submit">Abrir mensagem pronta no WhatsApp <span>↗</span></button><p id="send-status" role="status" aria-live="polite"></p><button class="quote-copy" type="button" id="copy-quote" hidden>Copiar mensagem do orçamento</button>
+      <div class="delivery-options"><label class="delivery-toggle" for="email-toggle"><span><strong>Enviar também por e-mail?</strong></span><input type="checkbox" id="email-toggle" role="switch" aria-controls="email-options"><span class="delivery-switch" aria-hidden="true"></span></label><div id="email-options" class="delivery-email" hidden><label for="email">Seu e-mail <span>*</span></label><input id="email" name="email" type="email" maxlength="160" autocomplete="email" placeholder="voce@empresa.com" disabled></div></div><button class="btn btn-primary form-submit" type="submit">Abrir mensagem pronta no WhatsApp <span>↗</span></button><p id="send-status" role="status" aria-live="polite"></p>
       <p class="privacy-note">Ao escolher e-mail, os dados serão enviados à WebCore para responder ao orçamento. No WhatsApp, confirme o envio da mensagem.</p>
     </form>
   </div></section>
@@ -148,7 +148,6 @@
   function refreshPreview(){
     var selected=Boolean(chosenPlan||hasMarketing);
     document.getElementById('quote-preview-wrap').hidden=!selected;
-    document.getElementById('copy-quote').hidden=!selected;
     document.getElementById('quote-preview').textContent=selected?quoteText():'';
   }
   function update(){
@@ -193,7 +192,6 @@
 
   });
   ['name','contact','email','message'].forEach(function(id){document.getElementById(id).addEventListener('input',function(){this.setCustomValidity('');refreshPreview();});});
-  document.getElementById('copy-quote').addEventListener('click',function(){var button=this; if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(quoteText()).then(function(){button.textContent='Mensagem copiada ✓';setTimeout(function(){button.textContent='Copiar mensagem do orçamento';},2200);}).catch(function(){button.textContent='Selecione o texto da prévia para copiar';});}else{button.textContent='Selecione o texto da prévia para copiar';}});
   var fastLink=document.getElementById('whatsapp-first');
   fastLink.addEventListener('click',function(){var msg='Olá! Gostaria de conversar sobre '+(chosenPlan?'o plano '+chosenPlan:'soluções digitais')+(hasMarketing?' com marketing digital mensal':'')+'. Podemos fazer um orçamento?';fastLink.href='https://wa.me/5518997463778?text='+encodeURIComponent(msg);});
   update();
