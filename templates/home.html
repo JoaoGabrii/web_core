@@ -104,10 +104,10 @@
     </div>
     <form id="orcamento-form" class="quote-form"><div class="form-title"><span>CONTE SOBRE SUA IDEIA</span><h3>Solicitar orçamento</h3><p>Escolha como deseja enviar sua solicitação.</p></div>
       <label for="name">Seu nome <span>*</span></label><input id="name" name="name" maxlength="120" required autocomplete="name" placeholder="Como podemos chamar você?">
-      <label for="contact">Seu WhatsApp <span>*</span></label><input id="contact" name="contact" type="tel" inputmode="tel" maxlength="25" title="Informe um telefone com DDD" required autocomplete="tel" placeholder="(18) 99999-9999"><label for="email">Seu e-mail <span class="optional-label">opcional</span></label><input id="email" name="email" type="email" maxlength="160" autocomplete="email" placeholder="voce@empresa.com">
+      <label for="contact">Seu WhatsApp <span>*</span></label><input id="contact" name="contact" type="tel" inputmode="tel" maxlength="25" title="Informe um telefone com DDD" required autocomplete="tel" placeholder="(18) 99999-9999">
       <label for="message">Sobre o que você precisa</label><textarea id="message" name="message" rows="4" maxlength="3000" placeholder="Conte um pouco sobre sua empresa e seu projeto..."></textarea>
       <p id="selection-error" class="selection-error" role="alert" hidden>Selecione um plano, marketing digital ou ambos para continuar.</p>
-      <fieldset style="border:0;padding:0;margin:12px 0"><legend style="font-weight:700;font-size:14px">Como deseja enviar?</legend><div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:8px"><label><input style="width:auto;height:auto" type="radio" name="channel" value="wa" checked> WhatsApp</label><label><input style="width:auto;height:auto" type="radio" name="channel" value="email"> E-mail</label><label><input style="width:auto;height:auto" type="radio" name="channel" value="both"> Ambos</label></div></fieldset><button class="btn btn-primary form-submit" type="submit">Abrir mensagem pronta no WhatsApp <span>↗</span></button><p id="send-status" role="status" aria-live="polite"></p><button class="quote-copy" type="button" id="copy-quote" hidden>Copiar mensagem do orçamento</button>
+      <div class="delivery-options"><label class="delivery-toggle" for="email-toggle"><span><strong>Enviar por e-mail?</strong><small>Escolha também como prefere entrar em contato.</small></span><input type="checkbox" id="email-toggle" role="switch" aria-controls="email-options"><span class="delivery-switch" aria-hidden="true"></span></label><div id="email-options" class="delivery-email" hidden><label for="email">Seu e-mail <span>*</span></label><input id="email" name="email" type="email" maxlength="160" autocomplete="email" placeholder="voce@empresa.com" disabled><label class="delivery-wa"><input id="also-wa" type="checkbox" checked><span>Continuar também pelo WhatsApp</span></label></div></div><button class="btn btn-primary form-submit" type="submit">Abrir mensagem pronta no WhatsApp <span>↗</span></button><p id="send-status" role="status" aria-live="polite"></p><button class="quote-copy" type="button" id="copy-quote" hidden>Copiar mensagem do orçamento</button>
       <p class="privacy-note">Ao escolher e-mail, os dados serão enviados à WebCore para responder ao orçamento. No WhatsApp, confirme o envio da mensagem.</p>
     </form>
   </div></section>
@@ -125,7 +125,7 @@
     if(!chosenPlan&&!hasMarketing)return '';
     var name=document.getElementById('name').value.trim();
     var contact=document.getElementById('contact').value.trim();
-    var email=document.getElementById('email').value.trim();
+    var email=document.getElementById('email').disabled?'':document.getElementById('email').value.trim();
     var details=document.getElementById('message').value.trim();
     var plans={
       'Simples':{title:'Plano Simples',desc:'Landing page profissional, responsiva e com chamadas diretas para contato.',ask:'Quero apresentar meu negócio de forma profissional e começar a receber contatos.'},
@@ -177,8 +177,10 @@
   toggle.addEventListener('click',function(){var open=menu.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open));});
   menu.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){menu.classList.remove('open');toggle.setAttribute('aria-expanded','false');});});
   var form=document.getElementById('orcamento-form'), sendButton=form.querySelector('.form-submit'), emailField=document.getElementById('email'), status=document.getElementById('send-status');
-  function channel(){return form.querySelector('[name=channel]:checked').value;}
-  form.querySelectorAll('[name=channel]').forEach(function(el){el.addEventListener('change',function(){emailField.required=channel()!=='wa';form.querySelector('.optional-label').textContent=emailField.required?'obrigatório':'opcional';sendButton.textContent=channel()==='wa'?'Abrir mensagem pronta no WhatsApp ↗':channel()==='email'?'Enviar orçamento por e-mail':'Enviar e-mail e abrir WhatsApp ↗';status.textContent='';});});
+  var emailToggle=document.getElementById('email-toggle'), alsoWa=document.getElementById('also-wa'), emailOptions=document.getElementById('email-options');
+  function channel(){return !emailToggle.checked?'wa':alsoWa.checked?'both':'email';}
+  function syncDelivery(){emailOptions.hidden=!emailToggle.checked;emailField.disabled=!emailToggle.checked;emailField.required=emailToggle.checked;sendButton.textContent=channel()==='wa'?'Abrir mensagem pronta no WhatsApp ↗':channel()==='email'?'Enviar orçamento por e-mail':'Enviar e-mail e continuar no WhatsApp ↗';status.textContent='';refreshPreview();}
+  emailToggle.addEventListener('change',syncDelivery);alsoWa.addEventListener('change',syncDelivery);syncDelivery();
   form.addEventListener('submit',async function(e){
     e.preventDefault();
     if(!chosenPlan&&!hasMarketing){document.getElementById('selection-error').hidden=false;document.getElementById('selection-error').scrollIntoView({behavior:'smooth',block:'center'});return;}
