@@ -96,14 +96,13 @@
 
   <section id="processo" class="section process-section"><div class="wrap"><div class="kicker">04 / NOSSO MÉTODO</div><h2>Do primeiro contato <span>à entrega.</span></h2><div class="steps"><div><span>01</span><h3>Entender</h3><p>Conversamos sobre sua empresa, seu público e o problema que deseja resolver.</p></div><div><span>02</span><h3>Planejar</h3><p>Apresentamos escopo, prazos, investimento e eventuais custos recorrentes.</p></div><div><span>03</span><h3>Construir</h3><p>Desenvolvemos o projeto com etapas de revisão e testes.</p></div><div><span>04</span><h3>Entregar</h3><p>Publicamos a solução e orientamos sua equipe sobre o uso.</p></div></div></div></section>
 
-  <section id="orcamento" class="section quote-section"><div class="wrap quote-grid"><div class="quote-intro"><div class="kicker">05 / SUA PROPOSTA</div><h2>Vamos construir <span>algo incrível?</span></h2><p>Escolha até um plano de desenvolvimento e, se desejar, acrescente marketing digital. Ou contrate somente marketing. O orçamento é personalizado e enviado pelo WhatsApp, com opção de envio também por e-mail.</p>
+  <section id="orcamento" class="section quote-section"><div class="wrap quote-grid"><div class="quote-intro"><div class="kicker">05 / SUA PROPOSTA</div><h2>Vamos construir <span>algo incrível?</span></h2><p>Escolha um plano, marketing digital ou solicite um orçamento personalizado sem selecionar serviços. O orçamento é personalizado e enviado pelo WhatsApp, com opção de envio também por e-mail.</p>
     <div class="cart-panel"><div class="cart-header"><span>✧ RESUMO DO PEDIDO</span><span id="cart-badge">0 selecionados</span></div><div id="cart-plan" class="cart-line"><span>Plano de desenvolvimento</span><strong>Nenhum selecionado</strong></div><div id="cart-marketing" class="cart-line"><span>Marketing digital mensal</span><strong>Não adicionado</strong></div><div id="quote-preview-wrap" hidden><details class="preview-fold"><summary>Prévia da mensagem <span>Ver mensagem</span></summary><div id="quote-preview" class="quote-preview" aria-live="polite"></div></details></div><div class="cart-footer"><span>Valores definidos em proposta</span><a href="#planos">Alterar seleção ↑</a></div></div>
     </div>
     <form id="orcamento-form" class="quote-form"><div class="form-title"><span>CONTE SOBRE SUA IDEIA</span><h3>Solicitar orçamento</h3><p>Escolha como deseja enviar sua solicitação.</p></div>
       <label for="name">Seu nome <span>*</span></label><input id="name" name="name" maxlength="120" required autocomplete="name" placeholder="Como podemos chamar você?">
       <label for="contact">Seu WhatsApp <span>*</span></label><input id="contact" name="contact" type="tel" inputmode="tel" maxlength="25" title="Informe um telefone com DDD" required autocomplete="tel" placeholder="(18) 99999-9999">
       <label for="message">Sobre o que você precisa</label><textarea id="message" name="message" rows="4" maxlength="3000" placeholder="Conte um pouco sobre sua empresa e seu projeto..."></textarea>
-      <p id="selection-error" class="selection-error" role="alert" hidden>Selecione um plano, marketing digital ou ambos para continuar.</p>
       <div class="delivery-options"><label class="delivery-toggle" for="email-toggle"><span><strong>Enviar também por e-mail?</strong></span><input type="checkbox" id="email-toggle" role="switch" aria-controls="email-options"><span class="delivery-switch" aria-hidden="true"></span></label><div id="email-options" class="delivery-email" hidden><label for="email">Seu e-mail <span>*</span></label><input id="email" name="email" type="email" maxlength="160" autocomplete="email" placeholder="voce@empresa.com" disabled></div></div><button class="btn btn-primary form-submit" type="submit">Abrir mensagem pronta no WhatsApp <span>↗</span></button><p id="send-status" role="status" aria-live="polite"></p>
       <p class="privacy-note">Ao escolher e-mail, os dados serão enviados à WebCore para responder ao orçamento. No WhatsApp, confirme o envio da mensagem.</p>
     </form>
@@ -120,7 +119,6 @@
   var menu = document.getElementById('site-nav');
   var toggle = document.querySelector('.menu-toggle');
   function quoteText(){
-    if(!chosenPlan&&!hasMarketing)return '';
     var name=document.getElementById('name').value.trim();
     var contact=document.getElementById('contact').value.trim();
     var email=document.getElementById('email').disabled?'':document.getElementById('email').value.trim();
@@ -133,8 +131,9 @@
       'Ultimate + CRM':{title:'Plano Ultimate + CRM',desc:'Site, painel administrativo com perfis e permissões + CRM para organizar leads e atendimentos.',ask:'Quero integrar minha operação comercial ao sistema, com funil de oportunidades e acompanhamento dos contatos.'}
     };
     var plan=chosenPlan?(plans[chosenPlan]||{title:'Plano '+chosenPlan,desc:'Solução personalizada.',ask:'Quero saber mais sobre este plano.'}):null;
-    var intro=plan&&hasMarketing?'Quero uma proposta integrada para desenvolver minha solução digital e atrair mais clientes.':hasMarketing?'Tenho interesse em contratar marketing digital mensal para atrair clientes e gerar oportunidades.':plan.title==='Plano Start'?'Quero começar com uma presença digital profissional.':plan.title==='Plano Intermediário'?'Quero um site profissional que eu consiga atualizar com autonomia.':plan.title==='Plano Pro'?'Preciso de um site com recursos de cadastro e gestão de informações.':plan.title==='Plano Ultimate'?'Procuro uma plataforma profissional com gestão e controle de acessos.':'Quero uma solução completa de gestão comercial e relacionamento com clientes.';
+    var intro=plan&&hasMarketing?'Quero uma proposta integrada para desenvolver minha solução digital e atrair mais clientes.':hasMarketing?'Tenho interesse em contratar marketing digital mensal para atrair clientes e gerar oportunidades.':!plan?'Gostaria de solicitar um orçamento personalizado, sem selecionar um plano específico.':plan.title==='Plano Start'?'Quero começar com uma presença digital profissional.':plan.title==='Plano Intermediário'?'Quero um site profissional que eu consiga atualizar com autonomia.':plan.title==='Plano Pro'?'Preciso de um site com recursos de cadastro e gestão de informações.':plan.title==='Plano Ultimate'?'Procuro uma plataforma profissional com gestão e controle de acessos.':'Quero uma solução completa de gestão comercial e relacionamento com clientes.';
     var lines=['Olá, equipe WebCore! \u{1F44B}','',intro,''];
+    if(!plan&&!hasMarketing){lines.push('*Plano:* Não selecionado — solicitação de orçamento personalizado.','');}
     if(plan){lines.push('\u{1F6D2} *Solução escolhida*','• '+plan.title,'• '+plan.desc,'','\u{1F3AF} *Meu objetivo*',plan.ask,'');}
     if(hasMarketing){lines.push('\u{1F4E3} *Marketing digital mensal*','• Quero conversar sobre divulgação, campanhas e captação de leads.','• Gostaria de entender o acompanhamento mensal, os serviços incluídos e o investimento em anúncios.','');}
     lines.push('\u{1F464} *Dados para contato*','• Nome: '+(name||'A preencher'),'• WhatsApp: '+(contact||'A preencher'));
@@ -165,7 +164,6 @@
     var count=(chosenPlan?1:0)+(hasMarketing?1:0);
     document.getElementById('cart-count').textContent=String(count);
     document.getElementById('cart-badge').textContent=count+' '+(count===1?'serviço':'serviços');
-    document.getElementById('selection-error').hidden=true;
     refreshPreview();
   }
   buttons.forEach(function(button){button.addEventListener('click',function(){
@@ -183,7 +181,6 @@
   emailToggle.addEventListener('change',syncDelivery);syncDelivery();
   form.addEventListener('submit',async function(e){
     e.preventDefault();
-    if(!chosenPlan&&!hasMarketing){document.getElementById('selection-error').hidden=false;document.getElementById('selection-error').scrollIntoView({behavior:'smooth',block:'center'});return;}
     var phone=document.getElementById('contact'); var digits=phone.value.replace(/\D/g,''); if(!/^(?:55)?\d{10,11}$/.test(digits)){phone.setCustomValidity('Informe um telefone válido com DDD.');phone.reportValidity();return;} if(!this.reportValidity())return;
     var summary=quoteText();
     var mode=channel(), wa='https://api.whatsapp.com/send?phone=5518997463778&text='+encodeURIComponent(summary);
