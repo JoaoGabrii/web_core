@@ -50,7 +50,7 @@
       <div class="plan-grid">
         <article class="plan-card" data-plan-card="Simples">
           <div class="plan-top"><span class="plan-no">01 / ESSENCIAL</span><span class="plan-icon">◩</span></div>
-          <h3>Simples</h3><p class="plan-sub">Sua marca na internet, do jeito certo.</p>
+          <h3>Start</h3><p class="plan-sub">Sua marca na internet, do jeito certo.</p>
           <p class="plan-desc">Uma landing page focada em apresentação, credibilidade e contato rápido.</p>
           <ul class="feature-list"><li>Visual profissional e identidade da marca</li><li>Adaptação para celular e computador</li><li>Seções, serviços e chamadas para ação</li><li>Formulário ou botão de WhatsApp</li><li>Publicação e orientações de uso</li></ul>
           <div class="plan-foot"><span>Projeto sob orçamento</span><button type="button" class="choose-plan" data-plan="Simples" aria-pressed="false">Adicionar ao orçamento <b>＋</b></button></div>
@@ -58,7 +58,7 @@
         <article class="plan-card" data-plan-card="Intermediário">
           <div class="plan-top"><span class="plan-no">02 / AUTONOMIA</span><span class="plan-icon">▤</span></div>
           <h3>Intermediário</h3><p class="plan-sub">Seu site, sob seu controle.</p>
-          <p class="plan-desc">Tudo do Simples, mais liberdade para manter o conteúdo atualizado sem depender de alterações no código.</p>
+          <p class="plan-desc">Tudo do Start, mais liberdade para manter o conteúdo atualizado sem depender de alterações no código.</p>
           <ul class="feature-list"><li>Landing page completa</li><li>Painel privado para editar conteúdo</li><li>Alteração de textos, títulos e imagens</li><li>Gestão das seções acordadas</li><li>Acesso administrativo protegido</li></ul>
           <div class="plan-foot"><span>Projeto sob orçamento</span><button type="button" class="choose-plan" data-plan="Intermediário" aria-pressed="false">Adicionar ao orçamento <b>＋</b></button></div>
         </article>
@@ -128,14 +128,14 @@
     var email=document.getElementById('email').disabled?'':document.getElementById('email').value.trim();
     var details=document.getElementById('message').value.trim();
     var plans={
-      'Simples':{title:'Plano Simples',desc:'Landing page profissional, responsiva e com chamadas diretas para contato.',ask:'Quero apresentar meu negócio de forma profissional e começar a receber contatos.'},
+      'Simples':{title:'Plano Start',desc:'Landing page profissional, responsiva e com chamadas diretas para contato.',ask:'Quero apresentar meu negócio de forma profissional e começar a receber contatos.'},
       'Intermediário':{title:'Plano Intermediário',desc:'Landing page + painel para gerenciar imagens, textos e conteúdos.',ask:'Quero autonomia para atualizar o site sem depender de alterações no código.'},
       'Pro':{title:'Plano Pro',desc:'Landing page + gestão de conteúdo + banco de dados e cadastro de clientes ou alunos.',ask:'Preciso organizar cadastros e informações com segurança e praticidade.'},
       'Ultimate':{title:'Plano Ultimate',desc:'Landing page + gestão de conteúdo + painel administrativo com usuários, permissões e perfis.',ask:'Quero uma solução de gestão completa, com níveis de acesso para minha equipe.'},
       'Ultimate + CRM':{title:'Plano Ultimate + CRM',desc:'Site, painel administrativo com perfis e permissões + CRM para organizar leads e atendimentos.',ask:'Quero integrar minha operação comercial ao sistema, com funil de oportunidades e acompanhamento dos contatos.'}
     };
     var plan=chosenPlan?(plans[chosenPlan]||{title:'Plano '+chosenPlan,desc:'Solução personalizada.',ask:'Quero saber mais sobre este plano.'}):null;
-    var intro=plan&&hasMarketing?'Quero uma proposta integrada para desenvolver minha solução digital e atrair mais clientes.':hasMarketing?'Tenho interesse em contratar marketing digital mensal para atrair clientes e gerar oportunidades.':plan.title==='Plano Simples'?'Quero começar com uma presença digital profissional.':plan.title==='Plano Intermediário'?'Quero um site profissional que eu consiga atualizar com autonomia.':plan.title==='Plano Pro'?'Preciso de um site com recursos de cadastro e gestão de informações.':plan.title==='Plano Ultimate'?'Procuro uma plataforma profissional com gestão e controle de acessos.':'Quero uma solução completa de gestão comercial e relacionamento com clientes.';
+    var intro=plan&&hasMarketing?'Quero uma proposta integrada para desenvolver minha solução digital e atrair mais clientes.':hasMarketing?'Tenho interesse em contratar marketing digital mensal para atrair clientes e gerar oportunidades.':plan.title==='Plano Start'?'Quero começar com uma presença digital profissional.':plan.title==='Plano Intermediário'?'Quero um site profissional que eu consiga atualizar com autonomia.':plan.title==='Plano Pro'?'Preciso de um site com recursos de cadastro e gestão de informações.':plan.title==='Plano Ultimate'?'Procuro uma plataforma profissional com gestão e controle de acessos.':'Quero uma solução completa de gestão comercial e relacionamento com clientes.';
     var lines=['Olá, equipe WebCore! \u{1F44B}','',intro,''];
     if(plan){lines.push('\u{1F6D2} *Solução escolhida*','• '+plan.title,'• '+plan.desc,'','\u{1F3AF} *Meu objetivo*',plan.ask,'');}
     if(hasMarketing){lines.push('\u{1F4E3} *Marketing digital mensal*','• Quero conversar sobre divulgação, campanhas e captação de leads.','• Gostaria de entender o acompanhamento mensal, os serviços incluídos e o investimento em anúncios.','');}
