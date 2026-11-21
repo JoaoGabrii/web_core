@@ -898,3 +898,19 @@ body:not(.visual-two) .footer{background:#0f2420;color:#f6f6e9}
 body:not(.visual-two) .topbar .brand-mark{color:#0c7055!important}
 body:not(.visual-two) .footer .brand-mark{color:#d7f15e!important}
 @media(max-width:850px){body:not(.visual-two) .site-nav{background:#f3eee4;color:#20372c}}
+
+/* Contact channels, independent from the personalized quote form */
+.contact-channels{margin-top:25px}
+.contact-channels-label{display:block;margin-bottom:12px;font-size:10px;font-weight:800;letter-spacing:.15em;color:#53645d}
+.contact-channels-links{display:flex;gap:12px;flex-wrap:wrap}
+.contact-channels .channel-link{display:flex;align-items:center;gap:12px;padding:13px 16px;border:1px solid #d8e1d4;border-radius:12px;background:#fff;color:#19352e;flex:1 1 190px;min-width:0;text-decoration:none;transition:transform .2s,border-color .2s,box-shadow .2s}
+.contact-channels .channel-link svg{width:29px;height:29px;flex:none}
+.channel-wa svg{color:#16834b}
+.channel-ig svg{color:#b33b78}
+.channel-link strong,.channel-link small{display:block}
+.channel-link strong{font-size:14px;font-weight:800}
+.channel-link small{font-size:11px;color:#65766e;margin-top:4px}
+.channel-arrow{margin-left:auto;color:#527b4e;font-size:18px}
+.contact-channels a.channel-link:hover{transform:translateY(-3px);border-color:#81ae77;box-shadow:0 6px 18px #173b2d13}
+.contact-channels a.channel-link:focus-visible{outline:2px solid #16784b;outline-offset:3px}
+@media(max-width:480px){.contact-channels .channel-link{flex-basis:100%}}
