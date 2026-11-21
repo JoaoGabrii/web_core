@@ -999,3 +999,7 @@ body .wc-footer{padding:40px 0 16px;background:#102620;color:#edf3e9}
 .wc-footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:15px;border-top:1px solid #ffffff24;color:#a8bcb0;font-size:11px}
 @media(max-width:850px){.wc-footer-main{grid-template-columns:1fr 1fr;gap:24px}.wc-footer-cta{grid-column:1/-1}}
 @media(max-width:520px){body .wc-footer{padding:28px 0 20px}.wc-footer-main{grid-template-columns:1fr;gap:22px}.wc-footer-cta{grid-column:auto}.wc-footer-bottom{align-items:start;flex-direction:column;padding-bottom:35px}}
+
+/* Match social icon interactions, even before Instagram has a destination. */
+.wc-footer .footer-social>.footer-instagram{cursor:pointer;transition:transform .2s,filter .2s,background .2s,color .2s}
+.wc-footer .footer-social>.footer-instagram:hover{transform:translateY(-2px);filter:brightness(1.16);color:#fff}
