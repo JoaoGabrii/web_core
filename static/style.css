@@ -945,3 +945,24 @@ body.visual-compact .contact-channels{margin-top:14px!important}
 body.visual-compact .contact-channels .channel-link{padding:9px 12px!important}
 @media(min-width:851px){html:has(body.visual-compact){scroll-padding-top:68px}}
 @media(max-width:850px){body.visual-compact .section{padding:24px 0}body.visual-compact .quote-grid{gap:18px}body.visual-compact .hero-art{min-height:280px}body.visual-compact .site-nav{top:61px}}
+
+/* Refined compact proposal and footer */
+body.visual-compact .process-section{padding:66px 0 72px}
+body.visual-compact .process-section .steps{margin-top:38px}
+body.visual-compact .quote-section{padding:38px 0 42px}
+body.visual-compact .quote-grid{gap:clamp(22px,3vw,48px);align-items:start}
+body.visual-compact .quote-intro h2{font-size:clamp(30px,3.2vw,48px);line-height:1.08}
+body.visual-compact .quote-intro>p{margin-bottom:22px}
+body.visual-compact .quote-form{box-shadow:0 12px 35px #173b2d0b}
+.preview-fold{margin:0 15px 12px;border:1px solid #d8e1d4;border-radius:9px;background:#f0f5ed;overflow:hidden}
+.preview-fold summary{cursor:pointer;padding:12px;font-size:13px;font-weight:700;color:#19382e}
+.preview-fold summary span{float:right;font-size:11px;font-weight:500;color:#527b4e}
+.preview-fold[open] summary span{display:none}
+.preview-fold .quote-preview{margin:0 10px 10px;max-height:170px;overflow:auto}
+.footer-social{display:inline-flex;gap:9px;align-items:center}
+.footer-social>a,.footer-social>.footer-instagram{display:inline-flex;align-items:center;justify-content:center;width:35px;height:35px;border:1px solid #ffffff30;border-radius:50%;color:#e1eadf;transition:background .2s,color .2s}
+.footer-social svg{width:20px!important;height:20px!important;flex:none}
+.footer-social>a:hover{background:#d7f15e;color:#152f28}
+.footer-social>.footer-instagram{opacity:.65}
+.footer-right{align-items:center;flex-wrap:wrap}
+@media(max-width:850px){body.visual-compact .process-section{padding:42px 0 48px}body.visual-compact .quote-section{padding:28px 0}body.visual-compact .process-section .steps{margin-top:24px}}
