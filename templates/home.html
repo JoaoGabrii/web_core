@@ -117,7 +117,7 @@
 (function(){
   'use strict';
   var visualButtons=Array.from(document.querySelectorAll('[data-visual]'));
-  function setVisual(v){document.body.classList.toggle('visual-two',v==='2');visualButtons.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.visual===v));});try{localStorage.setItem('webcore-visual',v);}catch(e){}}
+  function setVisual(v){document.body.classList.remove('visual-two');document.body.classList.toggle('visual-compact',v==='2');visualButtons.forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.visual===v));});try{localStorage.setItem('webcore-visual',v);}catch(e){}}
   var initial='1';try{initial=localStorage.getItem('webcore-visual')==='2'?'2':'1';}catch(e){}
   setVisual(initial);visualButtons.forEach(function(b){b.addEventListener('click',function(){setVisual(b.dataset.visual);});});
   var chosenPlan = null, hasMarketing = false;
