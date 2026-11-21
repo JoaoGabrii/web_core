@@ -1,8 +1,16 @@
 name = "web-core"
 compatibility_date = "2026-11-19"
 
+main = "worker.js"
+
 [build]
 command = "python3 build_static.py"
 
 [assets]
 directory = "./dist"
+binding = "ASSETS"
+
+[[ratelimits]]
+name = "QUOTE_LIMIT"
+namespace_id = "1001"
+simple = { limit = 3, period = 60 }
