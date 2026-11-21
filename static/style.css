@@ -872,3 +872,29 @@ body:not(.visual-two) .brand-mark, .visual-two .brand-mark, .footer .brand-mark,
 .brand-mark .wc-monogram{width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;filter:drop-shadow(0 1px 0 #103d2420)}
 .visual-two .brand-mark{color:#0c7055!important}
 @media(prefers-color-scheme:dark){body:not(.visual-two) .brand-mark{color:#c7ff3f!important}}
+
+/* Visual 1: palette of Visual 2, retaining the original compact layout and typography. */
+body:not(.visual-two){background:#f7f5ee;color:#1a2d28}
+body:not(.visual-two) .topbar{background:#f3eee4;border-color:#ddd5c8}
+body:not(.visual-two) .hero{background:#f3eee4;color:#132323}
+body:not(.visual-two) .hero h1{color:#132323}
+body:not(.visual-two) .hero h1 span{color:#678a4a}
+body:not(.visual-two) .hero-copy>p{color:#53645d}
+body:not(.visual-two) .plans-section,body:not(.visual-two) .portfolio-section,body:not(.visual-two) .clients-section,body:not(.visual-two) .quote-section{background:#f7f5ee;color:#1a2d28}
+body:not(.visual-two) .process-section{background:#e5ebdf;color:#1d372c}
+body:not(.visual-two) .marketing-section{background:#152f28;color:#fff}
+body:not(.visual-two) .marketing-section:before{background:radial-gradient(circle,#7eae6833,transparent 70%)}
+body:not(.visual-two) .marketing-section .marketing-copy h2{color:#fff}
+body:not(.visual-two) .marketing-section .marketing-copy h2 span{color:#d7f15e}
+body:not(.visual-two) .marketing-section .kicker,body:not(.visual-two) .marketing-points>div>span{color:#d7f15e}
+body:not(.visual-two) .marketing-copy>p,body:not(.visual-two) .marketing-points p{color:#bbcec0}
+body:not(.visual-two) .marketing-points strong{color:#fff}
+body:not(.visual-two) .marketing-offer{background:#f5f5e9;color:#1a3127;border-color:#d7f15e;box-shadow:10px 10px 0 #d7f15e}
+body:not(.visual-two) .marketing-offer h3{color:#18362c}
+body:not(.visual-two) .marketing-offer>p,body:not(.visual-two) .marketing-offer>small{color:#62776a}
+body:not(.visual-two) .marketing-offer .btn-primary{background:#1a382e;color:#fff}
+body:not(.visual-two) .marketing-service{color:#557a4e}
+body:not(.visual-two) .footer{background:#0f2420;color:#f6f6e9}
+body:not(.visual-two) .topbar .brand-mark{color:#0c7055!important}
+body:not(.visual-two) .footer .brand-mark{color:#d7f15e!important}
+@media(max-width:850px){body:not(.visual-two) .site-nav{background:#f3eee4;color:#20372c}}
