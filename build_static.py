@@ -39,7 +39,7 @@ for demo in ("projeto-nomads.html", "projeto-luar.html"):
 (OUT / "robots.txt").write_text("User-agent: *\nAllow: /\nSitemap: https://web-core.jgabriel-souza.workers.dev/sitemap.xml\n", encoding="utf-8")
 (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://web-core.jgabriel-souza.workers.dev/</loc></url><url><loc>https://web-core.jgabriel-souza.workers.dev/privacidade.html</loc></url></urlset>', encoding="utf-8")
 (OUT / "_headers").write_text(
-    "/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'\n"
+    "/*\n  X-Content-Type-Options: nosniff\n  Referrer-Policy: strict-origin-when-cross-origin\n  X-Frame-Options: DENY\n  Permissions-Policy: camera=(), microphone=(), geolocation=()\n  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'none'\n"
     "/static/*\n  Cache-Control: public, max-age=3600\n",
     encoding="utf-8",
 )
